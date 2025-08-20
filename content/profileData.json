@@ -1,0 +1,1854 @@
+{
+  "general": {
+    "profilePhoto": "/content/media/profilePhoto.jpg",
+    "username": "thecolechandler",
+    "displayName": "thecolechandler",
+    "profession": "photo - video - other stuff",
+    "location": "Tulsa, Oklahoma",
+    "pronouns": null,
+    "byline": "photo - video - other stuff in Tulsa, Oklahoma",
+    "website": "thecolechandler.cv",
+    "websiteURL": "http://thecolechandler.cv",
+    "about": "photo - video - other stuff",
+    "status": {
+      "text": null,
+      "emoji": null,
+      "timestamp": null
+    },
+    "sectionOrder": null
+  },
+  "projects": [
+    {
+      "id": "IqyBNLlY3bE0CFTm9VZj",
+      "year": "Ongoing",
+      "heading": "Galaxy Home Recreation at No Box Studios",
+      "url": "https://galaxyhomerecreation.com/",
+      "collaborators": [],
+      "description": "Filming, audio, lighting, editing, assisting, and product photography for NoBox Studios",
+      "attachments": [
+        {
+          "type": "image",
+          "width": 1482,
+          "height": 1482,
+          "url": "/content/media/Galaxy-Home-Recreation-at-No-Box-Studios.png"
+        }
+      ],
+      "type": "project",
+      "title": "Galaxy Home Recreation",
+      "company": "No Box Studios"
+    },
+    {
+      "id": "8RXI2r9OEaC0zoTDPd0J",
+      "year": "Ongoing",
+      "heading": "P&K Equipment at No Box Studios",
+      "url": "https://www.pkequipment.com/",
+      "collaborators": [],
+      "description": "Filming, audio, lighting, editing, and assisting for NoBox Studios",
+      "attachments": [
+        {
+          "type": "image",
+          "width": 986,
+          "height": 555,
+          "url": "/content/media/PandK-Equipment-at-No-Box-Studios.jpg"
+        }
+      ],
+      "type": "project",
+      "title": "P&K Equipment",
+      "company": "No Box Studios"
+    },
+    {
+      "id": "GoI7WY1jcmCF4QW35HTH",
+      "year": "Ongoing",
+      "heading": "QuikTrip at No Box Studios",
+      "url": "https://www.quiktrip.com/",
+      "collaborators": [],
+      "description": "Filming, audio, lighting, editing, and assisting for NoBox Studios",
+      "attachments": [
+        {
+          "type": "image",
+          "width": 1280,
+          "height": 720,
+          "url": "/content/media/QuikTrip-at-No-Box-Studios.jpg"
+        }
+      ],
+      "type": "project",
+      "title": "QuikTrip",
+      "company": "No Box Studios"
+    },
+    {
+      "id": "5tAGI5FMc675daZLnWQN",
+      "year": "2024",
+      "heading": "Fly Wheel",
+      "url": null,
+      "collaborators": [],
+      "description": "Event capture and editing for social and promotional",
+      "attachments": [
+        {
+          "type": "video",
+          "width": 1920,
+          "height": 1080,
+          "url": "/content/media/Fly-Wheel-1.mp4"
+        },
+        {
+          "type": "video",
+          "width": 1920,
+          "height": 1080,
+          "url": "/content/media/Fly-Wheel-2.mp4"
+        }
+      ],
+      "type": "project",
+      "title": "Fly Wheel",
+      "company": ""
+    },
+    {
+      "id": "l4KK408SQTfL4KNpQvwG",
+      "year": "2024",
+      "heading": "Love",
+      "url": null,
+      "collaborators": [],
+      "description": "Hire me to capture your love story\\\nWeddings, engagements, vow renewals",
+      "attachments": [
+        {
+          "type": "image",
+          "width": 2048,
+          "height": 1366,
+          "url": "/content/media/Love-1.jpg"
+        },
+        {
+          "type": "image",
+          "width": 2048,
+          "height": 1366,
+          "url": "/content/media/Love-2.jpg"
+        },
+        {
+          "type": "image",
+          "width": 1667,
+          "height": 2500,
+          "url": "/content/media/Love-3.jpg"
+        },
+        {
+          "type": "image",
+          "width": 2000,
+          "height": 1333,
+          "url": "/content/media/Love-4.jpg"
+        },
+        {
+          "type": "image",
+          "width": 9504,
+          "height": 6336,
+          "url": "/content/media/Love-5.jpg"
+        },
+        {
+          "type": "image",
+          "width": 9504,
+          "height": 6336,
+          "url": "/content/media/Love-6.jpg"
+        },
+        {
+          "type": "image",
+          "width": 1667,
+          "height": 2500,
+          "url": "/content/media/Love-7.jpg"
+        },
+        {
+          "type": "image",
+          "width": 2000,
+          "height": 1333,
+          "url": "/content/media/Love-8.jpg"
+        },
+        {
+          "type": "image",
+          "width": 2156,
+          "height": 2604,
+          "url": "/content/media/Love-9.jpg"
+        },
+        {
+          "type": "image",
+          "width": 2158,
+          "height": 2598,
+          "url": "/content/media/Love-10.jpg"
+        },
+        {
+          "type": "image",
+          "width": 2000,
+          "height": 1333,
+          "url": "/content/media/Love-11.jpg"
+        }
+      ],
+      "type": "project",
+      "title": "Love",
+      "company": ""
+    },
+    {
+      "id": "ydTKSp3Ui2psvjp0FV8n",
+      "year": "2024",
+      "heading": "Red Ribbon Gala at The Tony Li Project",
+      "url": "https://www.redribbongala.org/",
+      "collaborators": [],
+      "description": "Announcements and teasers for social",
+      "attachments": [
+        {
+          "type": "video",
+          "width": 1920,
+          "height": 1080,
+          "url": "/content/media/Red-Ribbon-Gala-at-The-Tony-Li-Project-1.mov"
+        },
+        {
+          "type": "video",
+          "width": 1920,
+          "height": 1080,
+          "url": "/content/media/Red-Ribbon-Gala-at-The-Tony-Li-Project-2.mov"
+        },
+        {
+          "type": "video",
+          "width": 1920,
+          "height": 1080,
+          "url": "/content/media/Red-Ribbon-Gala-at-The-Tony-Li-Project-3.mov"
+        },
+        {
+          "type": "video",
+          "width": 1920,
+          "height": 1080,
+          "url": "/content/media/Red-Ribbon-Gala-at-The-Tony-Li-Project-4.mov"
+        }
+      ],
+      "type": "project",
+      "title": "Red Ribbon Gala",
+      "company": "The Tony Li Project"
+    },
+    {
+      "id": "5seolx2J15RaO2F4HMTT",
+      "year": "2024",
+      "heading": "Matson's",
+      "url": "https://www.mastonstulsa.com/",
+      "collaborators": [],
+      "description": "Brand identity stills for website, social, and print",
+      "attachments": [
+        {
+          "type": "image",
+          "width": 2000,
+          "height": 1333,
+          "url": "/content/media/Matsons-1.jpg"
+        },
+        {
+          "type": "image",
+          "width": 2000,
+          "height": 1333,
+          "url": "/content/media/Matsons-2.jpg"
+        },
+        {
+          "type": "image",
+          "width": 1667,
+          "height": 2500,
+          "url": "/content/media/Matsons-3.jpg"
+        },
+        {
+          "type": "image",
+          "width": 1667,
+          "height": 2500,
+          "url": "/content/media/Matsons-4.jpg"
+        },
+        {
+          "type": "image",
+          "width": 2000,
+          "height": 1333,
+          "url": "/content/media/Matsons-5.jpg"
+        },
+        {
+          "type": "image",
+          "width": 2000,
+          "height": 1333,
+          "url": "/content/media/Matsons-6.jpg"
+        },
+        {
+          "type": "image",
+          "width": 1667,
+          "height": 2500,
+          "url": "/content/media/Matsons-7.jpg"
+        },
+        {
+          "type": "image",
+          "width": 1667,
+          "height": 2500,
+          "url": "/content/media/Matsons-8.jpg"
+        },
+        {
+          "type": "image",
+          "width": 2000,
+          "height": 1333,
+          "url": "/content/media/Matsons-9.jpg"
+        },
+        {
+          "type": "image",
+          "width": 1667,
+          "height": 2500,
+          "url": "/content/media/Matsons-10.jpg"
+        },
+        {
+          "type": "image",
+          "width": 2000,
+          "height": 1333,
+          "url": "/content/media/Matsons-11.jpg"
+        },
+        {
+          "type": "image",
+          "width": 2000,
+          "height": 1333,
+          "url": "/content/media/Matsons-12.jpg"
+        }
+      ],
+      "type": "project",
+      "title": "Matson's",
+      "company": ""
+    },
+    {
+      "id": "ZJ2PSOJO0WlY3n533n2u",
+      "year": "2024",
+      "heading": "Reading Partners",
+      "url": "https://readingpartners.org/",
+      "collaborators": [],
+      "description": "Branding stills for website, social, and print",
+      "attachments": [
+        {
+          "type": "image",
+          "width": 2000,
+          "height": 1333,
+          "url": "/content/media/Reading-Partners-1.jpg"
+        },
+        {
+          "type": "image",
+          "width": 2000,
+          "height": 1333,
+          "url": "/content/media/Reading-Partners-2.jpg"
+        },
+        {
+          "type": "image",
+          "width": 2000,
+          "height": 1333,
+          "url": "/content/media/Reading-Partners-3.jpg"
+        },
+        {
+          "type": "image",
+          "width": 2000,
+          "height": 1333,
+          "url": "/content/media/Reading-Partners-4.jpg"
+        },
+        {
+          "type": "image",
+          "width": 1667,
+          "height": 2500,
+          "url": "/content/media/Reading-Partners-5.jpg"
+        },
+        {
+          "type": "image",
+          "width": 2000,
+          "height": 1333,
+          "url": "/content/media/Reading-Partners-6.jpg"
+        },
+        {
+          "type": "image",
+          "width": 2000,
+          "height": 1333,
+          "url": "/content/media/Reading-Partners-7.jpg"
+        },
+        {
+          "type": "image",
+          "width": 2000,
+          "height": 1333,
+          "url": "/content/media/Reading-Partners-8.jpg"
+        },
+        {
+          "type": "image",
+          "width": 2000,
+          "height": 1333,
+          "url": "/content/media/Reading-Partners-9.jpg"
+        },
+        {
+          "type": "image",
+          "width": 2000,
+          "height": 1333,
+          "url": "/content/media/Reading-Partners-10.jpg"
+        },
+        {
+          "type": "image",
+          "width": 2000,
+          "height": 1333,
+          "url": "/content/media/Reading-Partners-11.jpg"
+        },
+        {
+          "type": "image",
+          "width": 2000,
+          "height": 1333,
+          "url": "/content/media/Reading-Partners-12.jpg"
+        },
+        {
+          "type": "image",
+          "width": 2000,
+          "height": 1333,
+          "url": "/content/media/Reading-Partners-13.jpg"
+        },
+        {
+          "type": "image",
+          "width": 2000,
+          "height": 1333,
+          "url": "/content/media/Reading-Partners-14.jpg"
+        },
+        {
+          "type": "image",
+          "width": 1667,
+          "height": 2500,
+          "url": "/content/media/Reading-Partners-15.jpg"
+        }
+      ],
+      "type": "project",
+      "title": "Reading Partners",
+      "company": ""
+    },
+    {
+      "id": "agrqQIZAAkAswd9sDaW8",
+      "year": "2024",
+      "heading": "Experience Tulsa",
+      "url": "https://www.instagram.com/experience.tulsa/",
+      "collaborators": [],
+      "description": "Event coverage for Experience Tulsa - a monthly event cultivating community and connection with fellow movers, shakers, makers, and doers in Tulsa",
+      "attachments": [
+        {
+          "type": "image",
+          "width": 2000,
+          "height": 1333,
+          "url": "/content/media/Experience-Tulsa-1.jpg"
+        },
+        {
+          "type": "image",
+          "width": 2000,
+          "height": 1333,
+          "url": "/content/media/Experience-Tulsa-2.jpg"
+        },
+        {
+          "type": "image",
+          "width": 2000,
+          "height": 1333,
+          "url": "/content/media/Experience-Tulsa-3.jpg"
+        },
+        {
+          "type": "image",
+          "width": 2000,
+          "height": 1333,
+          "url": "/content/media/Experience-Tulsa-4.jpg"
+        },
+        {
+          "type": "image",
+          "width": 2000,
+          "height": 1333,
+          "url": "/content/media/Experience-Tulsa-5.jpg"
+        },
+        {
+          "type": "image",
+          "width": 2000,
+          "height": 1333,
+          "url": "/content/media/Experience-Tulsa-6.jpg"
+        },
+        {
+          "type": "image",
+          "width": 2000,
+          "height": 1333,
+          "url": "/content/media/Experience-Tulsa-7.jpg"
+        },
+        {
+          "type": "image",
+          "width": 2000,
+          "height": 1333,
+          "url": "/content/media/Experience-Tulsa-8.jpg"
+        },
+        {
+          "type": "image",
+          "width": 1667,
+          "height": 2500,
+          "url": "/content/media/Experience-Tulsa-9.jpg"
+        },
+        {
+          "type": "image",
+          "width": 2000,
+          "height": 1333,
+          "url": "/content/media/Experience-Tulsa-10.jpg"
+        },
+        {
+          "type": "image",
+          "width": 2000,
+          "height": 1333,
+          "url": "/content/media/Experience-Tulsa-11.jpg"
+        },
+        {
+          "type": "image",
+          "width": 2000,
+          "height": 1333,
+          "url": "/content/media/Experience-Tulsa-12.jpg"
+        },
+        {
+          "type": "image",
+          "width": 2000,
+          "height": 1333,
+          "url": "/content/media/Experience-Tulsa-13.jpg"
+        },
+        {
+          "type": "image",
+          "width": 2000,
+          "height": 1333,
+          "url": "/content/media/Experience-Tulsa-14.jpg"
+        },
+        {
+          "type": "image",
+          "width": 2000,
+          "height": 1333,
+          "url": "/content/media/Experience-Tulsa-15.jpg"
+        },
+        {
+          "type": "image",
+          "width": 2000,
+          "height": 1333,
+          "url": "/content/media/Experience-Tulsa-16.jpg"
+        }
+      ],
+      "type": "project",
+      "title": "Experience Tulsa",
+      "company": ""
+    },
+    {
+      "id": "PZGxYzK2GeWp8BNUhZ26",
+      "year": "2024",
+      "heading": "AirCo",
+      "url": "https://www.aircoservice.com/",
+      "collaborators": [],
+      "description": "Brand identity stills for website, social, and print",
+      "attachments": [
+        {
+          "type": "image",
+          "width": 1200,
+          "height": 800,
+          "url": "/content/media/AirCo-1.jpg"
+        },
+        {
+          "type": "image",
+          "width": 1200,
+          "height": 800,
+          "url": "/content/media/AirCo-2.jpg"
+        },
+        {
+          "type": "image",
+          "width": 1200,
+          "height": 800,
+          "url": "/content/media/AirCo-3.jpg"
+        },
+        {
+          "type": "image",
+          "width": 1200,
+          "height": 800,
+          "url": "/content/media/AirCo-4.jpg"
+        },
+        {
+          "type": "image",
+          "width": 1200,
+          "height": 800,
+          "url": "/content/media/AirCo-5.jpg"
+        },
+        {
+          "type": "image",
+          "width": 2000,
+          "height": 1333,
+          "url": "/content/media/AirCo-6.jpg"
+        }
+      ],
+      "type": "project",
+      "title": "AirCo",
+      "company": ""
+    },
+    {
+      "id": "G9MM2b0v0ZMZ4f2LCcic",
+      "year": "2023",
+      "heading": "Thayer Furniture",
+      "url": "https://www.studiothayer.com/index.html#/",
+      "collaborators": [],
+      "description": "Brand identity captured, edited, and scored",
+      "attachments": [
+        {
+          "type": "video",
+          "width": 1920,
+          "height": 1080,
+          "url": "/content/media/Thayer-Furniture.mp4"
+        }
+      ],
+      "type": "project",
+      "title": "Thayer Furniture",
+      "company": ""
+    },
+    {
+      "id": "9JYDpLsEcd5Ink1ikvUW",
+      "year": "2023",
+      "heading": "Abersons at The Tony Li Project",
+      "url": "https://www.instagram.com/abersonstyle/",
+      "collaborators": [],
+      "description": "Film and edit for seasonal campaign\\\nProducer: Tony Li\\\nStills: Rubria Rose Ireland\\\nModel: Elaine Raechelle & Monica McCafferty",
+      "attachments": [
+        {
+          "type": "video",
+          "width": 1920,
+          "height": 1080,
+          "url": "/content/media/Abersons-at-The-Tony-Li-Project-1.mp4"
+        },
+        {
+          "type": "video",
+          "width": 1920,
+          "height": 1080,
+          "url": "/content/media/Abersons-at-The-Tony-Li-Project-2.mp4"
+        },
+        {
+          "type": "video",
+          "width": 1920,
+          "height": 1080,
+          "url": "/content/media/Abersons-at-The-Tony-Li-Project-3.mp4"
+        },
+        {
+          "type": "video",
+          "width": 1920,
+          "height": 1080,
+          "url": "/content/media/Abersons-at-The-Tony-Li-Project-4.mp4"
+        },
+        {
+          "type": "video",
+          "width": 1920,
+          "height": 1080,
+          "url": "/content/media/Abersons-at-The-Tony-Li-Project-5.mp4"
+        },
+        {
+          "type": "video",
+          "width": 1920,
+          "height": 1080,
+          "url": "/content/media/Abersons-at-The-Tony-Li-Project-6.mp4"
+        },
+        {
+          "type": "video",
+          "width": 1920,
+          "height": 1080,
+          "url": "/content/media/Abersons-at-The-Tony-Li-Project-7.mp4"
+        }
+      ],
+      "type": "project",
+      "title": "Abersons",
+      "company": "The Tony Li Project"
+    },
+    {
+      "id": "Er9NSgDNH6eOn6mKiVGk",
+      "year": "2023",
+      "heading": "Project 31",
+      "url": "https://project31.com/",
+      "collaborators": [],
+      "description": "Event recap for web and social",
+      "attachments": [
+        {
+          "type": "video",
+          "width": 1920,
+          "height": 1080,
+          "url": "/content/media/Project-31.mov"
+        }
+      ],
+      "type": "project",
+      "title": "Project 31",
+      "company": ""
+    },
+    {
+      "id": "xfjwke0vfNCSEr4zN17E",
+      "year": "2023",
+      "heading": "LivyLu",
+      "url": "https://shoplivylu.com/",
+      "collaborators": [],
+      "description": "Lifestyle and flat-lay style stills for web and social",
+      "attachments": [
+        {
+          "type": "image",
+          "width": 2000,
+          "height": 2500,
+          "url": "/content/media/LivyLu-1.jpg"
+        },
+        {
+          "type": "image",
+          "width": 2000,
+          "height": 2500,
+          "url": "/content/media/LivyLu-2.jpg"
+        },
+        {
+          "type": "image",
+          "width": 2000,
+          "height": 2500,
+          "url": "/content/media/LivyLu-3.jpg"
+        },
+        {
+          "type": "image",
+          "width": 2000,
+          "height": 2500,
+          "url": "/content/media/LivyLu-4.jpg"
+        },
+        {
+          "type": "image",
+          "width": 2000,
+          "height": 2500,
+          "url": "/content/media/LivyLu-5.jpg"
+        },
+        {
+          "type": "image",
+          "width": 2000,
+          "height": 2500,
+          "url": "/content/media/LivyLu-6.jpg"
+        },
+        {
+          "type": "image",
+          "width": 2048,
+          "height": 2560,
+          "url": "/content/media/LivyLu-7.jpg"
+        },
+        {
+          "type": "image",
+          "width": 2048,
+          "height": 2560,
+          "url": "/content/media/LivyLu-8.jpg"
+        },
+        {
+          "type": "image",
+          "width": 2048,
+          "height": 2560,
+          "url": "/content/media/LivyLu-9.jpg"
+        },
+        {
+          "type": "image",
+          "width": 2048,
+          "height": 2560,
+          "url": "/content/media/LivyLu-10.jpg"
+        },
+        {
+          "type": "image",
+          "width": 2048,
+          "height": 2560,
+          "url": "/content/media/LivyLu-11.jpg"
+        },
+        {
+          "type": "image",
+          "width": 2000,
+          "height": 2500,
+          "url": "/content/media/LivyLu-12.jpg"
+        }
+      ],
+      "type": "project",
+      "title": "LivyLu",
+      "company": ""
+    }
+  ],
+  "sideProjects": [
+    {
+      "id": "MgKZ0yIHlEsHDkrDcI74",
+      "year": "Ongoing",
+      "heading": "Fusion in Davinci Resolve",
+      "url": null,
+      "collaborators": [],
+      "description": "On going project to replace After Effects with Fusion inside of Davinci Resolve",
+      "attachments": [
+        {
+          "type": "video",
+          "width": 1920,
+          "height": 1080,
+          "url": "/content/media/Fusion-in-Davinci-Resolve-1.mov"
+        },
+        {
+          "type": "video",
+          "width": 1920,
+          "height": 1080,
+          "url": "/content/media/Fusion-in-Davinci-Resolve-2.mov"
+        },
+        {
+          "type": "video",
+          "width": 1920,
+          "height": 1080,
+          "url": "/content/media/Fusion-in-Davinci-Resolve-3.mov"
+        },
+        {
+          "type": "video",
+          "width": 1920,
+          "height": 1080,
+          "url": "/content/media/Fusion-in-Davinci-Resolve-4.mov"
+        }
+      ],
+      "type": "sideProject",
+      "title": "Fusion in Davinci Resolve",
+      "company": ""
+    }
+  ],
+  "exhibitions": [],
+  "talks": [],
+  "writing": [],
+  "awards": [
+    {
+      "id": "6eio1Og0F5mYUosmxuMz",
+      "year": "2023",
+      "heading": "OBEA 1st Place Video Narrative from OBEA",
+      "url": "https://www.rsu.edu/rsu-communications-students-take-home-obea-awards/",
+      "collaborators": [],
+      "description": "",
+      "attachments": [],
+      "type": "award",
+      "title": "OBEA 1st Place Video Narrative",
+      "presenter": "OBEA"
+    },
+    {
+      "id": "nLgUQsroRX3dkuNUmWkK",
+      "year": "2023",
+      "heading": "Cinematography for Winning Campaign Graphex Awards from ADCT",
+      "url": "https://www.thetonyliproject.com/red-ribbon-gala-2023-campaign",
+      "collaborators": [],
+      "description": "",
+      "attachments": [],
+      "type": "award",
+      "title": "Cinematography for Winning Campaign Graphex Awards",
+      "presenter": "ADCT"
+    },
+    {
+      "id": "jGFW7Nn4hnfNJb6xsmrf",
+      "year": "2022",
+      "heading": "Outstanding Senior Capstone Project from Rogers State University",
+      "url": "https://www.instagram.com/p/CdPwtN7uUvF/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
+      "collaborators": [],
+      "description": "",
+      "attachments": [],
+      "type": "award",
+      "title": "Outstanding Senior Capstone Project",
+      "presenter": "Rogers State University"
+    },
+    {
+      "id": "gNupoJTS5oftlyERr6eS",
+      "year": "2020",
+      "heading": "Honorable Mention for Videography Graphex Awards from ADCT",
+      "url": "https://www.rsu.edu/rsu-students-broadcast-capstone-film-nominated-official-selection-film-festival/",
+      "collaborators": [],
+      "description": "",
+      "attachments": [],
+      "type": "award",
+      "title": "Honorable Mention for Videography Graphex Awards",
+      "presenter": "ADCT"
+    },
+    {
+      "id": "74YHMnPRvYyWXnQzvQtF",
+      "year": "2020",
+      "heading": "Honorable Mention for Photography Graphex Awards from ADCT",
+      "url": "https://www.rsu.edu/rsu-students-broadcast-capstone-film-nominated-official-selection-film-festival/",
+      "collaborators": [],
+      "description": "",
+      "attachments": [],
+      "type": "award",
+      "title": "Honorable Mention for Photography Graphex Awards",
+      "presenter": "ADCT"
+    }
+  ],
+  "features": [
+    {
+      "id": "mXs7IANeH9LuGdfWAfZC",
+      "year": "2020",
+      "heading": "Cole Chandler – RSU Student filmmaker",
+      "url": "https://rsu.tv/shows/perspectives/perspectives-cole-chandler-rsu-student-filmmaker/",
+      "collaborators": [],
+      "description": "",
+      "attachments": [],
+      "type": "feature",
+      "title": "Cole Chandler – RSU Student filmmaker",
+      "publisher": ""
+    },
+    {
+      "id": "TW9BbUK99rPFN2Zanmi7",
+      "year": "2020",
+      "heading": "Capstone Film Nominated for Official Selection on RSU",
+      "url": "https://www.rsu.edu/rsu-students-broadcast-capstone-film-nominated-official-selection-film-festival/",
+      "collaborators": [],
+      "description": "",
+      "attachments": [],
+      "type": "feature",
+      "title": "Capstone Film Nominated for Official Selection",
+      "publisher": "RSU"
+    },
+    {
+      "id": "0QPZIZd1WHa2GfKhYOOD",
+      "year": "2019",
+      "heading": "Students Take Home OBEA Awards",
+      "url": "https://www.rsu.edu/rsu-communications-students-take-home-obea-awards/",
+      "collaborators": [],
+      "description": "",
+      "attachments": [],
+      "type": "feature",
+      "title": "Students Take Home OBEA Awards",
+      "publisher": ""
+    }
+  ],
+  "workExperience": [],
+  "volunteering": [],
+  "education": [
+    {
+      "id": "1c4gyguZg7AvHCcfBwGX",
+      "year": "2019 — 2022",
+      "heading": "Bachelor of Corporate Communications at Rogers State University",
+      "url": "https://www.rsu.edu/rsu-students-broadcast-capstone-film-nominated-official-selection-film-festival/",
+      "collaborators": [],
+      "description": "",
+      "attachments": [],
+      "type": "education",
+      "degree": "Bachelor of Corporate Communications",
+      "school": "Rogers State University",
+      "location": "Claremore, Oklahoma"
+    }
+  ],
+  "certifications": [],
+  "contact": [
+    {
+      "id": "sNqHwFkwzcDqyghki7b4",
+      "platform": "Are.na",
+      "handle": "thecolechandler",
+      "url": "https://are.na/thecolechandler"
+    },
+    {
+      "id": "d44KysUVtboB3Wi87aTa",
+      "platform": "boysgetbored",
+      "handle": "boysgetbored",
+      "url": "http://www.boysgetbored.com"
+    },
+    {
+      "id": "SwlntJralirvdBtL42sA",
+      "platform": "Website",
+      "handle": "thecolechandler.com",
+      "url": "http://www.thecolechandler.com"
+    },
+    {
+      "id": "bQb9QOkWw2PuGzOjVgGu",
+      "platform": "Email",
+      "handle": "cole@thecolechandler.com",
+      "url": "mailto:cole@thecolechandler.com"
+    }
+  ],
+  "allCollections": [
+    {
+      "name": "Projects",
+      "items": [
+        {
+          "id": "IqyBNLlY3bE0CFTm9VZj",
+          "year": "Ongoing",
+          "heading": "Galaxy Home Recreation at No Box Studios",
+          "url": "https://galaxyhomerecreation.com/",
+          "collaborators": [],
+          "description": "Filming, audio, lighting, editing, assisting, and product photography for NoBox Studios",
+          "attachments": [
+            {
+              "type": "image",
+              "width": 1482,
+              "height": 1482,
+              "url": "/content/media/Galaxy-Home-Recreation-at-No-Box-Studios.png"
+            }
+          ],
+          "type": "project",
+          "title": "Galaxy Home Recreation",
+          "company": "No Box Studios"
+        },
+        {
+          "id": "8RXI2r9OEaC0zoTDPd0J",
+          "year": "Ongoing",
+          "heading": "P&K Equipment at No Box Studios",
+          "url": "https://www.pkequipment.com/",
+          "collaborators": [],
+          "description": "Filming, audio, lighting, editing, and assisting for NoBox Studios",
+          "attachments": [
+            {
+              "type": "image",
+              "width": 986,
+              "height": 555,
+              "url": "/content/media/PandK-Equipment-at-No-Box-Studios.jpg"
+            }
+          ],
+          "type": "project",
+          "title": "P&K Equipment",
+          "company": "No Box Studios"
+        },
+        {
+          "id": "GoI7WY1jcmCF4QW35HTH",
+          "year": "Ongoing",
+          "heading": "QuikTrip at No Box Studios",
+          "url": "https://www.quiktrip.com/",
+          "collaborators": [],
+          "description": "Filming, audio, lighting, editing, and assisting for NoBox Studios",
+          "attachments": [
+            {
+              "type": "image",
+              "width": 1280,
+              "height": 720,
+              "url": "/content/media/QuikTrip-at-No-Box-Studios.jpg"
+            }
+          ],
+          "type": "project",
+          "title": "QuikTrip",
+          "company": "No Box Studios"
+        },
+        {
+          "id": "5tAGI5FMc675daZLnWQN",
+          "year": "2024",
+          "heading": "Fly Wheel",
+          "url": null,
+          "collaborators": [],
+          "description": "Event capture and editing for social and promotional",
+          "attachments": [
+            {
+              "type": "video",
+              "width": 1920,
+              "height": 1080,
+              "url": "/content/media/Fly-Wheel-1.mp4"
+            },
+            {
+              "type": "video",
+              "width": 1920,
+              "height": 1080,
+              "url": "/content/media/Fly-Wheel-2.mp4"
+            }
+          ],
+          "type": "project",
+          "title": "Fly Wheel",
+          "company": ""
+        },
+        {
+          "id": "l4KK408SQTfL4KNpQvwG",
+          "year": "2024",
+          "heading": "Love",
+          "url": null,
+          "collaborators": [],
+          "description": "Hire me to capture your love story\\\nWeddings, engagements, vow renewals",
+          "attachments": [
+            {
+              "type": "image",
+              "width": 2048,
+              "height": 1366,
+              "url": "/content/media/Love-1.jpg"
+            },
+            {
+              "type": "image",
+              "width": 2048,
+              "height": 1366,
+              "url": "/content/media/Love-2.jpg"
+            },
+            {
+              "type": "image",
+              "width": 1667,
+              "height": 2500,
+              "url": "/content/media/Love-3.jpg"
+            },
+            {
+              "type": "image",
+              "width": 2000,
+              "height": 1333,
+              "url": "/content/media/Love-4.jpg"
+            },
+            {
+              "type": "image",
+              "width": 9504,
+              "height": 6336,
+              "url": "/content/media/Love-5.jpg"
+            },
+            {
+              "type": "image",
+              "width": 9504,
+              "height": 6336,
+              "url": "/content/media/Love-6.jpg"
+            },
+            {
+              "type": "image",
+              "width": 1667,
+              "height": 2500,
+              "url": "/content/media/Love-7.jpg"
+            },
+            {
+              "type": "image",
+              "width": 2000,
+              "height": 1333,
+              "url": "/content/media/Love-8.jpg"
+            },
+            {
+              "type": "image",
+              "width": 2156,
+              "height": 2604,
+              "url": "/content/media/Love-9.jpg"
+            },
+            {
+              "type": "image",
+              "width": 2158,
+              "height": 2598,
+              "url": "/content/media/Love-10.jpg"
+            },
+            {
+              "type": "image",
+              "width": 2000,
+              "height": 1333,
+              "url": "/content/media/Love-11.jpg"
+            }
+          ],
+          "type": "project",
+          "title": "Love",
+          "company": ""
+        },
+        {
+          "id": "ydTKSp3Ui2psvjp0FV8n",
+          "year": "2024",
+          "heading": "Red Ribbon Gala at The Tony Li Project",
+          "url": "https://www.redribbongala.org/",
+          "collaborators": [],
+          "description": "Announcements and teasers for social",
+          "attachments": [
+            {
+              "type": "video",
+              "width": 1920,
+              "height": 1080,
+              "url": "/content/media/Red-Ribbon-Gala-at-The-Tony-Li-Project-1.mov"
+            },
+            {
+              "type": "video",
+              "width": 1920,
+              "height": 1080,
+              "url": "/content/media/Red-Ribbon-Gala-at-The-Tony-Li-Project-2.mov"
+            },
+            {
+              "type": "video",
+              "width": 1920,
+              "height": 1080,
+              "url": "/content/media/Red-Ribbon-Gala-at-The-Tony-Li-Project-3.mov"
+            },
+            {
+              "type": "video",
+              "width": 1920,
+              "height": 1080,
+              "url": "/content/media/Red-Ribbon-Gala-at-The-Tony-Li-Project-4.mov"
+            }
+          ],
+          "type": "project",
+          "title": "Red Ribbon Gala",
+          "company": "The Tony Li Project"
+        },
+        {
+          "id": "5seolx2J15RaO2F4HMTT",
+          "year": "2024",
+          "heading": "Matson's",
+          "url": "https://www.mastonstulsa.com/",
+          "collaborators": [],
+          "description": "Brand identity stills for website, social, and print",
+          "attachments": [
+            {
+              "type": "image",
+              "width": 2000,
+              "height": 1333,
+              "url": "/content/media/Matsons-1.jpg"
+            },
+            {
+              "type": "image",
+              "width": 2000,
+              "height": 1333,
+              "url": "/content/media/Matsons-2.jpg"
+            },
+            {
+              "type": "image",
+              "width": 1667,
+              "height": 2500,
+              "url": "/content/media/Matsons-3.jpg"
+            },
+            {
+              "type": "image",
+              "width": 1667,
+              "height": 2500,
+              "url": "/content/media/Matsons-4.jpg"
+            },
+            {
+              "type": "image",
+              "width": 2000,
+              "height": 1333,
+              "url": "/content/media/Matsons-5.jpg"
+            },
+            {
+              "type": "image",
+              "width": 2000,
+              "height": 1333,
+              "url": "/content/media/Matsons-6.jpg"
+            },
+            {
+              "type": "image",
+              "width": 1667,
+              "height": 2500,
+              "url": "/content/media/Matsons-7.jpg"
+            },
+            {
+              "type": "image",
+              "width": 1667,
+              "height": 2500,
+              "url": "/content/media/Matsons-8.jpg"
+            },
+            {
+              "type": "image",
+              "width": 2000,
+              "height": 1333,
+              "url": "/content/media/Matsons-9.jpg"
+            },
+            {
+              "type": "image",
+              "width": 1667,
+              "height": 2500,
+              "url": "/content/media/Matsons-10.jpg"
+            },
+            {
+              "type": "image",
+              "width": 2000,
+              "height": 1333,
+              "url": "/content/media/Matsons-11.jpg"
+            },
+            {
+              "type": "image",
+              "width": 2000,
+              "height": 1333,
+              "url": "/content/media/Matsons-12.jpg"
+            }
+          ],
+          "type": "project",
+          "title": "Matson's",
+          "company": ""
+        },
+        {
+          "id": "ZJ2PSOJO0WlY3n533n2u",
+          "year": "2024",
+          "heading": "Reading Partners",
+          "url": "https://readingpartners.org/",
+          "collaborators": [],
+          "description": "Branding stills for website, social, and print",
+          "attachments": [
+            {
+              "type": "image",
+              "width": 2000,
+              "height": 1333,
+              "url": "/content/media/Reading-Partners-1.jpg"
+            },
+            {
+              "type": "image",
+              "width": 2000,
+              "height": 1333,
+              "url": "/content/media/Reading-Partners-2.jpg"
+            },
+            {
+              "type": "image",
+              "width": 2000,
+              "height": 1333,
+              "url": "/content/media/Reading-Partners-3.jpg"
+            },
+            {
+              "type": "image",
+              "width": 2000,
+              "height": 1333,
+              "url": "/content/media/Reading-Partners-4.jpg"
+            },
+            {
+              "type": "image",
+              "width": 1667,
+              "height": 2500,
+              "url": "/content/media/Reading-Partners-5.jpg"
+            },
+            {
+              "type": "image",
+              "width": 2000,
+              "height": 1333,
+              "url": "/content/media/Reading-Partners-6.jpg"
+            },
+            {
+              "type": "image",
+              "width": 2000,
+              "height": 1333,
+              "url": "/content/media/Reading-Partners-7.jpg"
+            },
+            {
+              "type": "image",
+              "width": 2000,
+              "height": 1333,
+              "url": "/content/media/Reading-Partners-8.jpg"
+            },
+            {
+              "type": "image",
+              "width": 2000,
+              "height": 1333,
+              "url": "/content/media/Reading-Partners-9.jpg"
+            },
+            {
+              "type": "image",
+              "width": 2000,
+              "height": 1333,
+              "url": "/content/media/Reading-Partners-10.jpg"
+            },
+            {
+              "type": "image",
+              "width": 2000,
+              "height": 1333,
+              "url": "/content/media/Reading-Partners-11.jpg"
+            },
+            {
+              "type": "image",
+              "width": 2000,
+              "height": 1333,
+              "url": "/content/media/Reading-Partners-12.jpg"
+            },
+            {
+              "type": "image",
+              "width": 2000,
+              "height": 1333,
+              "url": "/content/media/Reading-Partners-13.jpg"
+            },
+            {
+              "type": "image",
+              "width": 2000,
+              "height": 1333,
+              "url": "/content/media/Reading-Partners-14.jpg"
+            },
+            {
+              "type": "image",
+              "width": 1667,
+              "height": 2500,
+              "url": "/content/media/Reading-Partners-15.jpg"
+            }
+          ],
+          "type": "project",
+          "title": "Reading Partners",
+          "company": ""
+        },
+        {
+          "id": "agrqQIZAAkAswd9sDaW8",
+          "year": "2024",
+          "heading": "Experience Tulsa",
+          "url": "https://www.instagram.com/experience.tulsa/",
+          "collaborators": [],
+          "description": "Event coverage for Experience Tulsa - a monthly event cultivating community and connection with fellow movers, shakers, makers, and doers in Tulsa",
+          "attachments": [
+            {
+              "type": "image",
+              "width": 2000,
+              "height": 1333,
+              "url": "/content/media/Experience-Tulsa-1.jpg"
+            },
+            {
+              "type": "image",
+              "width": 2000,
+              "height": 1333,
+              "url": "/content/media/Experience-Tulsa-2.jpg"
+            },
+            {
+              "type": "image",
+              "width": 2000,
+              "height": 1333,
+              "url": "/content/media/Experience-Tulsa-3.jpg"
+            },
+            {
+              "type": "image",
+              "width": 2000,
+              "height": 1333,
+              "url": "/content/media/Experience-Tulsa-4.jpg"
+            },
+            {
+              "type": "image",
+              "width": 2000,
+              "height": 1333,
+              "url": "/content/media/Experience-Tulsa-5.jpg"
+            },
+            {
+              "type": "image",
+              "width": 2000,
+              "height": 1333,
+              "url": "/content/media/Experience-Tulsa-6.jpg"
+            },
+            {
+              "type": "image",
+              "width": 2000,
+              "height": 1333,
+              "url": "/content/media/Experience-Tulsa-7.jpg"
+            },
+            {
+              "type": "image",
+              "width": 2000,
+              "height": 1333,
+              "url": "/content/media/Experience-Tulsa-8.jpg"
+            },
+            {
+              "type": "image",
+              "width": 1667,
+              "height": 2500,
+              "url": "/content/media/Experience-Tulsa-9.jpg"
+            },
+            {
+              "type": "image",
+              "width": 2000,
+              "height": 1333,
+              "url": "/content/media/Experience-Tulsa-10.jpg"
+            },
+            {
+              "type": "image",
+              "width": 2000,
+              "height": 1333,
+              "url": "/content/media/Experience-Tulsa-11.jpg"
+            },
+            {
+              "type": "image",
+              "width": 2000,
+              "height": 1333,
+              "url": "/content/media/Experience-Tulsa-12.jpg"
+            },
+            {
+              "type": "image",
+              "width": 2000,
+              "height": 1333,
+              "url": "/content/media/Experience-Tulsa-13.jpg"
+            },
+            {
+              "type": "image",
+              "width": 2000,
+              "height": 1333,
+              "url": "/content/media/Experience-Tulsa-14.jpg"
+            },
+            {
+              "type": "image",
+              "width": 2000,
+              "height": 1333,
+              "url": "/content/media/Experience-Tulsa-15.jpg"
+            },
+            {
+              "type": "image",
+              "width": 2000,
+              "height": 1333,
+              "url": "/content/media/Experience-Tulsa-16.jpg"
+            }
+          ],
+          "type": "project",
+          "title": "Experience Tulsa",
+          "company": ""
+        },
+        {
+          "id": "PZGxYzK2GeWp8BNUhZ26",
+          "year": "2024",
+          "heading": "AirCo",
+          "url": "https://www.aircoservice.com/",
+          "collaborators": [],
+          "description": "Brand identity stills for website, social, and print",
+          "attachments": [
+            {
+              "type": "image",
+              "width": 1200,
+              "height": 800,
+              "url": "/content/media/AirCo-1.jpg"
+            },
+            {
+              "type": "image",
+              "width": 1200,
+              "height": 800,
+              "url": "/content/media/AirCo-2.jpg"
+            },
+            {
+              "type": "image",
+              "width": 1200,
+              "height": 800,
+              "url": "/content/media/AirCo-3.jpg"
+            },
+            {
+              "type": "image",
+              "width": 1200,
+              "height": 800,
+              "url": "/content/media/AirCo-4.jpg"
+            },
+            {
+              "type": "image",
+              "width": 1200,
+              "height": 800,
+              "url": "/content/media/AirCo-5.jpg"
+            },
+            {
+              "type": "image",
+              "width": 2000,
+              "height": 1333,
+              "url": "/content/media/AirCo-6.jpg"
+            }
+          ],
+          "type": "project",
+          "title": "AirCo",
+          "company": ""
+        },
+        {
+          "id": "G9MM2b0v0ZMZ4f2LCcic",
+          "year": "2023",
+          "heading": "Thayer Furniture",
+          "url": "https://www.studiothayer.com/index.html#/",
+          "collaborators": [],
+          "description": "Brand identity captured, edited, and scored",
+          "attachments": [
+            {
+              "type": "video",
+              "width": 1920,
+              "height": 1080,
+              "url": "/content/media/Thayer-Furniture.mp4"
+            }
+          ],
+          "type": "project",
+          "title": "Thayer Furniture",
+          "company": ""
+        },
+        {
+          "id": "9JYDpLsEcd5Ink1ikvUW",
+          "year": "2023",
+          "heading": "Abersons at The Tony Li Project",
+          "url": "https://www.instagram.com/abersonstyle/",
+          "collaborators": [],
+          "description": "Film and edit for seasonal campaign\\\nProducer: Tony Li\\\nStills: Rubria Rose Ireland\\\nModel: Elaine Raechelle & Monica McCafferty",
+          "attachments": [
+            {
+              "type": "video",
+              "width": 1920,
+              "height": 1080,
+              "url": "/content/media/Abersons-at-The-Tony-Li-Project-1.mp4"
+            },
+            {
+              "type": "video",
+              "width": 1920,
+              "height": 1080,
+              "url": "/content/media/Abersons-at-The-Tony-Li-Project-2.mp4"
+            },
+            {
+              "type": "video",
+              "width": 1920,
+              "height": 1080,
+              "url": "/content/media/Abersons-at-The-Tony-Li-Project-3.mp4"
+            },
+            {
+              "type": "video",
+              "width": 1920,
+              "height": 1080,
+              "url": "/content/media/Abersons-at-The-Tony-Li-Project-4.mp4"
+            },
+            {
+              "type": "video",
+              "width": 1920,
+              "height": 1080,
+              "url": "/content/media/Abersons-at-The-Tony-Li-Project-5.mp4"
+            },
+            {
+              "type": "video",
+              "width": 1920,
+              "height": 1080,
+              "url": "/content/media/Abersons-at-The-Tony-Li-Project-6.mp4"
+            },
+            {
+              "type": "video",
+              "width": 1920,
+              "height": 1080,
+              "url": "/content/media/Abersons-at-The-Tony-Li-Project-7.mp4"
+            }
+          ],
+          "type": "project",
+          "title": "Abersons",
+          "company": "The Tony Li Project"
+        },
+        {
+          "id": "Er9NSgDNH6eOn6mKiVGk",
+          "year": "2023",
+          "heading": "Project 31",
+          "url": "https://project31.com/",
+          "collaborators": [],
+          "description": "Event recap for web and social",
+          "attachments": [
+            {
+              "type": "video",
+              "width": 1920,
+              "height": 1080,
+              "url": "/content/media/Project-31.mov"
+            }
+          ],
+          "type": "project",
+          "title": "Project 31",
+          "company": ""
+        },
+        {
+          "id": "xfjwke0vfNCSEr4zN17E",
+          "year": "2023",
+          "heading": "LivyLu",
+          "url": "https://shoplivylu.com/",
+          "collaborators": [],
+          "description": "Lifestyle and flat-lay style stills for web and social",
+          "attachments": [
+            {
+              "type": "image",
+              "width": 2000,
+              "height": 2500,
+              "url": "/content/media/LivyLu-1.jpg"
+            },
+            {
+              "type": "image",
+              "width": 2000,
+              "height": 2500,
+              "url": "/content/media/LivyLu-2.jpg"
+            },
+            {
+              "type": "image",
+              "width": 2000,
+              "height": 2500,
+              "url": "/content/media/LivyLu-3.jpg"
+            },
+            {
+              "type": "image",
+              "width": 2000,
+              "height": 2500,
+              "url": "/content/media/LivyLu-4.jpg"
+            },
+            {
+              "type": "image",
+              "width": 2000,
+              "height": 2500,
+              "url": "/content/media/LivyLu-5.jpg"
+            },
+            {
+              "type": "image",
+              "width": 2000,
+              "height": 2500,
+              "url": "/content/media/LivyLu-6.jpg"
+            },
+            {
+              "type": "image",
+              "width": 2048,
+              "height": 2560,
+              "url": "/content/media/LivyLu-7.jpg"
+            },
+            {
+              "type": "image",
+              "width": 2048,
+              "height": 2560,
+              "url": "/content/media/LivyLu-8.jpg"
+            },
+            {
+              "type": "image",
+              "width": 2048,
+              "height": 2560,
+              "url": "/content/media/LivyLu-9.jpg"
+            },
+            {
+              "type": "image",
+              "width": 2048,
+              "height": 2560,
+              "url": "/content/media/LivyLu-10.jpg"
+            },
+            {
+              "type": "image",
+              "width": 2048,
+              "height": 2560,
+              "url": "/content/media/LivyLu-11.jpg"
+            },
+            {
+              "type": "image",
+              "width": 2000,
+              "height": 2500,
+              "url": "/content/media/LivyLu-12.jpg"
+            }
+          ],
+          "type": "project",
+          "title": "LivyLu",
+          "company": ""
+        }
+      ]
+    },
+    {
+      "name": "Side Projects",
+      "items": [
+        {
+          "id": "MgKZ0yIHlEsHDkrDcI74",
+          "year": "Ongoing",
+          "heading": "Fusion in Davinci Resolve",
+          "url": null,
+          "collaborators": [],
+          "description": "On going project to replace After Effects with Fusion inside of Davinci Resolve",
+          "attachments": [
+            {
+              "type": "video",
+              "width": 1920,
+              "height": 1080,
+              "url": "/content/media/Fusion-in-Davinci-Resolve-1.mov"
+            },
+            {
+              "type": "video",
+              "width": 1920,
+              "height": 1080,
+              "url": "/content/media/Fusion-in-Davinci-Resolve-2.mov"
+            },
+            {
+              "type": "video",
+              "width": 1920,
+              "height": 1080,
+              "url": "/content/media/Fusion-in-Davinci-Resolve-3.mov"
+            },
+            {
+              "type": "video",
+              "width": 1920,
+              "height": 1080,
+              "url": "/content/media/Fusion-in-Davinci-Resolve-4.mov"
+            }
+          ],
+          "type": "sideProject",
+          "title": "Fusion in Davinci Resolve",
+          "company": ""
+        }
+      ]
+    },
+    {
+      "name": "Awards",
+      "items": [
+        {
+          "id": "6eio1Og0F5mYUosmxuMz",
+          "year": "2023",
+          "heading": "OBEA 1st Place Video Narrative from OBEA",
+          "url": "https://www.rsu.edu/rsu-communications-students-take-home-obea-awards/",
+          "collaborators": [],
+          "description": "",
+          "attachments": [],
+          "type": "award",
+          "title": "OBEA 1st Place Video Narrative",
+          "presenter": "OBEA"
+        },
+        {
+          "id": "nLgUQsroRX3dkuNUmWkK",
+          "year": "2023",
+          "heading": "Cinematography for Winning Campaign Graphex Awards from ADCT",
+          "url": "https://www.thetonyliproject.com/red-ribbon-gala-2023-campaign",
+          "collaborators": [],
+          "description": "",
+          "attachments": [],
+          "type": "award",
+          "title": "Cinematography for Winning Campaign Graphex Awards",
+          "presenter": "ADCT"
+        },
+        {
+          "id": "jGFW7Nn4hnfNJb6xsmrf",
+          "year": "2022",
+          "heading": "Outstanding Senior Capstone Project from Rogers State University",
+          "url": "https://www.instagram.com/p/CdPwtN7uUvF/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
+          "collaborators": [],
+          "description": "",
+          "attachments": [],
+          "type": "award",
+          "title": "Outstanding Senior Capstone Project",
+          "presenter": "Rogers State University"
+        },
+        {
+          "id": "gNupoJTS5oftlyERr6eS",
+          "year": "2020",
+          "heading": "Honorable Mention for Videography Graphex Awards from ADCT",
+          "url": "https://www.rsu.edu/rsu-students-broadcast-capstone-film-nominated-official-selection-film-festival/",
+          "collaborators": [],
+          "description": "",
+          "attachments": [],
+          "type": "award",
+          "title": "Honorable Mention for Videography Graphex Awards",
+          "presenter": "ADCT"
+        },
+        {
+          "id": "74YHMnPRvYyWXnQzvQtF",
+          "year": "2020",
+          "heading": "Honorable Mention for Photography Graphex Awards from ADCT",
+          "url": "https://www.rsu.edu/rsu-students-broadcast-capstone-film-nominated-official-selection-film-festival/",
+          "collaborators": [],
+          "description": "",
+          "attachments": [],
+          "type": "award",
+          "title": "Honorable Mention for Photography Graphex Awards",
+          "presenter": "ADCT"
+        }
+      ]
+    },
+    {
+      "name": "Features",
+      "items": [
+        {
+          "id": "mXs7IANeH9LuGdfWAfZC",
+          "year": "2020",
+          "heading": "Cole Chandler – RSU Student filmmaker",
+          "url": "https://rsu.tv/shows/perspectives/perspectives-cole-chandler-rsu-student-filmmaker/",
+          "collaborators": [],
+          "description": "",
+          "attachments": [],
+          "type": "feature",
+          "title": "Cole Chandler – RSU Student filmmaker",
+          "publisher": ""
+        },
+        {
+          "id": "TW9BbUK99rPFN2Zanmi7",
+          "year": "2020",
+          "heading": "Capstone Film Nominated for Official Selection on RSU",
+          "url": "https://www.rsu.edu/rsu-students-broadcast-capstone-film-nominated-official-selection-film-festival/",
+          "collaborators": [],
+          "description": "",
+          "attachments": [],
+          "type": "feature",
+          "title": "Capstone Film Nominated for Official Selection",
+          "publisher": "RSU"
+        },
+        {
+          "id": "0QPZIZd1WHa2GfKhYOOD",
+          "year": "2019",
+          "heading": "Students Take Home OBEA Awards",
+          "url": "https://www.rsu.edu/rsu-communications-students-take-home-obea-awards/",
+          "collaborators": [],
+          "description": "",
+          "attachments": [],
+          "type": "feature",
+          "title": "Students Take Home OBEA Awards",
+          "publisher": ""
+        }
+      ]
+    },
+    {
+      "name": "Education",
+      "items": [
+        {
+          "id": "1c4gyguZg7AvHCcfBwGX",
+          "year": "2019 — 2022",
+          "heading": "Bachelor of Corporate Communications at Rogers State University",
+          "url": "https://www.rsu.edu/rsu-students-broadcast-capstone-film-nominated-official-selection-film-festival/",
+          "collaborators": [],
+          "description": "",
+          "attachments": [],
+          "type": "education",
+          "degree": "Bachelor of Corporate Communications",
+          "school": "Rogers State University",
+          "location": "Claremore, Oklahoma"
+        }
+      ]
+    },
+    {
+      "name": "Contact",
+      "items": [
+        {
+          "id": "sNqHwFkwzcDqyghki7b4",
+          "platform": "Are.na",
+          "handle": "thecolechandler",
+          "url": "https://are.na/thecolechandler"
+        },
+        {
+          "id": "d44KysUVtboB3Wi87aTa",
+          "platform": "boysgetbored",
+          "handle": "boysgetbored",
+          "url": "http://www.boysgetbored.com"
+        },
+        {
+          "id": "SwlntJralirvdBtL42sA",
+          "platform": "Website",
+          "handle": "thecolechandler.com",
+          "url": "http://www.thecolechandler.com"
+        },
+        {
+          "id": "bQb9QOkWw2PuGzOjVgGu",
+          "platform": "Email",
+          "handle": "cole@thecolechandler.com",
+          "url": "mailto:cole@thecolechandler.com"
+        }
+      ]
+    }
+  ]
+}
