@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            list-style-type: none;
+        }
+
+        :root {
+            --font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            --font-size: clamp(16px, 2vmin, 24px);
+            --text-color: #000;
+            --line-height: 1.6;
+            --background-color: #00F;
+            --image-height: 50vh;
+            --padding: clamp(16px, 3vmin, 32px);
+            --wash1: rgba(0, 0, 0, 0.1);
+            --wash2: rgba(0, 0, 0, 0.05);
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --text-color: #fff;
+                --background-color: #00F;
+                --wash1: rgba(255, 255, 255, 0.3);
+                --wash2: rgba(255, 255, 255, 0.2);
+            }
+        }
+
+        body {
+            font-size: var(--font-size);
+            font-family: var(--font-family);
+            line-height: var(--line-height);
+            color: var(--text-color);
+            background-color: var(--background-color);
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            position: relative;
+        }
+
+        .toggle {
+            padding: var(--padding);
+            display: flex;
+            flex-direction: row;
+            font-size: var(--font-size);
+            line-height: var(--line-height);
+            font-family: var(--font-family);
+            background-color: transparent;
+            border: none;
+            outline: none;
+            width: 100%;
+            column-gap: var(--padding);
+            cursor: pointer;
+            color: var(--text-color);
+            justify-content: space-between;
+        }
+
+        .toggle:hover {
+            opacity: 0.7;
+        }
+
+        .bio {
+            border-bottom: 1px solid var(--wash2);
+        }
+
+        .bioContent {
+            padding: 0 var(--padding) var(--padding);
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease, opacity 0.3s ease;
+            opacity: 0;
+        }
+
+        .bioContent.active {
+            max-height: 500px;
+            opacity: 1;
+        }
+
+        h1, h2 {
+            font-size: var(--font-size);
+            text-align: left;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        h1 {
+            font-weight: 500;
+        }
+
+        h2 {
+            font-weight: normal;
+        }
+
+        p:not(:last-child) {
+            margin-bottom: calc(var(--font-size) * var(--line-height));
+        }
+
+        p a {
+            color: inherit;
+            text-decoration: none;
+            border-bottom: 1px solid var(--wash1);
+        }
+
+        .projects {
+            display: flex;
+            width: 100%;
+            flex-direction: column;
+            flex-wrap: nowrap;
+            margin: 0 auto;
+        }
+
+        .project {
+            position: relative;
+            overflow: hidden;
+            border-bottom: 1px solid var(--wash2);
+        }
+
+        .project:last-child {
+            border-bottom: none;
+        }
+
+        .projectDetails {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease;
+        }
+
+        .projectDetails.active {
+            max-height: 2000px;
+        }
+
+        .attachments {
+            display: flex;
+            position: relative;
+            align-items: flex-start;
+            overflow-x: auto;
+            padding: 0 var(--padding) var(--padding);
+        }
+
+        .attachmentsInner {
+            display: flex;
+            flex-direction: row;
+            gap: var(--padding);
+            flex-wrap: nowrap;
+            align-items: center;
+        }
+
+        .description {
+            min-width: 300px;
+            max-width: 500px;
+            padding-right: var(--padding);
+        }
+
+        .attachment {
+            position: relative;
+            height: var(--image-height);
+            flex-shrink: 0;
+        }
+
+        .attachment img,
+        .attachment video {
+            height: 100%;
+            width: auto;
+            object-fit: contain;
+            border: 1px solid var(--wash2);
+        }
+
+        .placeholder-image {
+            height: var(--image-height);
+            width: calc(var(--image-height) * 1.5);
+            background: linear-gradient(135deg, var(--wash1) 0%, var(--wash2) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-color);
+            opacity: 0.5;
+            border: 1px solid var(--wash2);
+        }
+
+        .instructions {
+            background: rgba(255, 255, 0, 0.1);
+            border: 2px dashed rgba(255, 255, 0, 0.5);
+            padding: var(--padding);
+            margin: var(--padding);
+            border-radius: 8px;
+        }
+
+        .instructions h3 {
+            margin-bottom: 1em;
+            color: var(--text-color);
+        }
+
+        .instructions code {
+            background: rgba(0, 0, 0, 0.1);
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-family: monospace;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Instructions Section -->
+        <div class="instructions">
+            <h3>📁 How to Add Your Content:</h3>
+            <p>1. Create a folder called <code>public/content/</code> in your project</p>
+            <p>2. Add your <code>profileData.json</code> file there</p>
+            <p>3. Add your images/videos to <code>public/media/</code> folder</p>
+            <p>4. Your profileData.json should follow the structure shown in the sample data below</p>
+            <p style="margin-top: 1em;"><strong>This yellow box will disappear when you add your real data!</strong></p>
+        </div>
+
+        <!-- Bio Section -->
+        <div class="bio">
+            <button class="toggle" onclick="toggleSection('bio')">
+                <h1>Your Name Here</h1>
+                <span>Info</span>
+            </button>
+            <div class="bioContent" id="bio">
+                <p>This is where your bio goes. Add a description about yourself, your work, and what you do. You can make this as long or as short as you want.</p>
+                <p>
+                    <a href="https://twitter.com" target="_blank">Twitter</a>, 
+                    <a href="https://instagram.com" target="_blank">Instagram</a>, 
+                    <a href="https://linkedin.com" target="_blank">LinkedIn</a>, 
+                    <a href="mailto:email@example.com">Email</a>
+                </p>
+            </div>
+        </div>
+
+        <!-- Projects Section -->
+        <div class="projects">
+            <!-- Project 1 -->
+            <div class="project">
+                <button class="toggle" onclick="toggleSection('project1')">
+                    <h2>Sample Project One</h2>
+                    <span>2024</span>
+                </button>
+                <div class="projectDetails" id="project1">
+                    <div class="attachments">
+                        <div class="attachmentsInner">
+                            <div class="description">
+                                <p>This is a sample project description. Replace this with your actual project description. You can include details about the project, your role, the technologies used, and the outcomes.</p>
+                                <p>Add multiple paragraphs if needed to fully explain your project.</p>
+                            </div>
+                            <div class="attachment">
+                                <div class="placeholder-image">Image 1</div>
+                            </div>
+                            <div class="attachment">
+                                <div class="placeholder-image">Image 2</div>
+                            </div>
+                            <div class="attachment">
+                                <div class="placeholder-image">Image 3</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 2 -->
+            <div class="project">
+                <button class="toggle" onclick="toggleSection('project2')">
+                    <h2>Sample Project Two</h2>
+                    <span>2023</span>
+                </button>
+                <div class="projectDetails" id="project2">
+                    <div class="attachments">
+                        <div class="attachmentsInner">
+                            <div class="description">
+                                <p>Another sample project. This template supports multiple projects with descriptions and media galleries.</p>
+                                <p>Each project can have its own set of images or videos that scroll horizontally.</p>
+                            </div>
+                            <div class="attachment">
+                                <div class="placeholder-image">Image 1</div>
+                            </div>
+                            <div class="attachment">
+                                <div class="placeholder-image">Image 2</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 3 -->
+            <div class="project">
+                <button class="toggle" onclick="toggleSection('project3')">
+                    <h2>Sample Project Three</h2>
+                    <span>2023</span>
+                </button>
+                <div class="projectDetails" id="project3">
+                    <div class="attachments">
+                        <div class="attachmentsInner">
+                            <div class="description">
+                                <p>A third sample project to show how the portfolio scales with multiple entries.</p>
+                            </div>
+                            <div class="attachment">
+                                <div class="placeholder-image">Image 1</div>
+                            </div>
+                            <div class="attachment">
+                                <div class="placeholder-image">Image 2</div>
+                            </div>
+                            <div class="attachment">
+                                <div class="placeholder-image">Image 3</div>
+                            </div>
+                            <div class="attachment">
+                                <div class="placeholder-image">Image 4</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sample profileData.json structure (for reference) -->
+    <script id="sample-data" type="application/json">
+    {
+        "general": {
+            "displayName": "Your Name Here",
+            "about": "Your bio text goes here...",
+            "sectionOrder": ["Projects", "Side Projects", "Contact"]
+        },
+        "projects": [
+            {
+                "title": "Project Name",
+                "year": "2024",
+                "description": "Project description...",
+                "attachments": [
+                    {
+                        "type": "image",
+                        "url": "/media/image1.jpg",
+                        "width": 1920,
+                        "height": 1080
+                    }
+                ]
+            }
+        ],
+        "sideProjects": [],
+        "contact": [
+            {
+                "platform": "Email",
+                "url": "mailto:your@email.com"
+            },
+            {
+                "platform": "LinkedIn",
+                "url": "https://linkedin.com/in/yourprofile"
+            }
+        ]
+    }
+    </script>
+
+    <script>
+        // Simple toggle function for accordion sections
+        let activeSection = null;
+
+        function toggleSection(sectionId) {
+            const section = document.getElementById(sectionId);
+            const allSections = document.querySelectorAll('.bioContent, .projectDetails');
+            
+            // Close all other sections
+            allSections.forEach(s => {
+                if (s.id !== sectionId) {
+                    s.classList.remove('active');
+                }
+            });
+            
+            // Toggle current section
+            section.classList.toggle('active');
+            
+            // Track active section
+            if (section.classList.contains('active')) {
+                activeSection = sectionId;
+            } else {
+                activeSection = null;
+            }
+        }
+
+        // Initialize with bio open
+        window.addEventListener('DOMContentLoaded', () => {
+            // Remove instructions if real data is detected
+            // This would be done when integrating with real data
+        });
+    </script>
+</body>
+</html>
