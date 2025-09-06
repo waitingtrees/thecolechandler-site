@@ -417,9 +417,10 @@
                 
                 // Add attachments
                 project.attachments.forEach(attachment => {
+                    // Remove leading slash from URL since it starts with /content/media/
                     const mediaPath = attachment.url.startsWith('http') ? 
                         attachment.url : 
-                        `content${attachment.url.startsWith('/') ? '' : '/'}${attachment.url}`;
+                        attachment.url.substring(1);  // Remove the leading /
                     
                     if (attachment.type === 'video') {
                         html += `
