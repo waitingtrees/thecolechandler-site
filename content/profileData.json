@@ -7,8 +7,6 @@
     "location": "Tulsa, Oklahoma",
     "pronouns": null,
     "byline": "photo - video - other stuff in Tulsa, Oklahoma",
-    "website": "thecolechandler.com",
-    "websiteURL": "www.thecolechandler.com",
     "about": "photo - video - other stuff",
     "status": {
       "text": null,
@@ -923,8 +921,8 @@
     {
       "id": "bQb9QOkWw2PuGzOjVgGu",
       "platform": "Email",
-      "handle": "cole@thecolechandler.com",
-      "url": "mailto:cole@thecolechandler.com"
+      "handle": "colechandler0@gmail.com",
+      "url": "mailto:colechandler0@gmail.com"
     }
   ],
   "allCollections": [
@@ -1845,8 +1843,8 @@
         {
           "id": "bQb9QOkWw2PuGzOjVgGu",
           "platform": "Email",
-          "handle": "cole@thecolechandler.com",
-          "url": "mailto:cole@thecolechandler.com"
+          "handle": "colechandler0@gmail.com",
+          "url": "mailto:colechandler0@gmail.com"
         }
       ]
     }
