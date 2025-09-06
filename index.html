@@ -40,12 +40,29 @@
             color: var(--text-color);
             background-color: var(--background-color);
             -webkit-font-smoothing: antialiased;
+            min-height: 100vh;
         }
 
         .container {
             display: flex;
             flex-direction: column;
             position: relative;
+        }
+
+        .loading {
+            padding: var(--padding);
+            text-align: center;
+            color: var(--text-color);
+            opacity: 0.7;
+        }
+
+        .error {
+            padding: var(--padding);
+            text-align: center;
+            color: #ff0000;
+            background: rgba(255, 0, 0, 0.1);
+            margin: var(--padding);
+            border-radius: 8px;
         }
 
         .toggle {
@@ -63,6 +80,7 @@
             cursor: pointer;
             color: var(--text-color);
             justify-content: space-between;
+            align-items: center;
         }
 
         .toggle:hover {
@@ -82,16 +100,14 @@
         }
 
         .bioContent.active {
-            max-height: 500px;
+            max-height: 1000px;
             opacity: 1;
         }
 
         h1, h2 {
             font-size: var(--font-size);
             text-align: left;
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
+            flex: 1;
         }
 
         h1 {
@@ -102,14 +118,22 @@
             font-weight: normal;
         }
 
-        p:not(:last-child) {
-            margin-bottom: calc(var(--font-size) * var(--line-height));
+        p {
+            margin-bottom: 1em;
+        }
+
+        p:last-child {
+            margin-bottom: 0;
         }
 
         p a {
             color: inherit;
             text-decoration: none;
             border-bottom: 1px solid var(--wash1);
+        }
+
+        p a:hover {
+            opacity: 0.7;
         }
 
         .projects {
@@ -137,7 +161,7 @@
         }
 
         .projectDetails.active {
-            max-height: 2000px;
+            max-height: 3000px;
         }
 
         .attachments {
@@ -146,6 +170,24 @@
             align-items: flex-start;
             overflow-x: auto;
             padding: 0 var(--padding) var(--padding);
+            cursor: grab;
+        }
+
+        .attachments:active {
+            cursor: grabbing;
+        }
+
+        .attachments::-webkit-scrollbar {
+            height: 8px;
+        }
+
+        .attachments::-webkit-scrollbar-track {
+            background: var(--wash2);
+        }
+
+        .attachments::-webkit-scrollbar-thumb {
+            background: var(--wash1);
+            border-radius: 4px;
         }
 
         .attachmentsInner {
@@ -153,13 +195,14 @@
             flex-direction: row;
             gap: var(--padding);
             flex-wrap: nowrap;
-            align-items: center;
+            align-items: flex-start;
         }
 
         .description {
             min-width: 300px;
             max-width: 500px;
             padding-right: var(--padding);
+            flex-shrink: 0;
         }
 
         .attachment {
@@ -172,197 +215,110 @@
         .attachment video {
             height: 100%;
             width: auto;
+            max-width: 90vw;
             object-fit: contain;
+            display: block;
+        }
+
+        .attachment-wrapper {
+            height: 100%;
+            position: relative;
             border: 1px solid var(--wash2);
+            background: var(--wash2);
         }
 
-        .placeholder-image {
-            height: var(--image-height);
-            width: calc(var(--image-height) * 1.5);
-            background: linear-gradient(135deg, var(--wash1) 0%, var(--wash2) 100%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--text-color);
-            opacity: 0.5;
-            border: 1px solid var(--wash2);
+        .year {
+            opacity: 0.7;
+            white-space: nowrap;
         }
 
-        .instructions {
-            background: rgba(255, 255, 0, 0.1);
-            border: 2px dashed rgba(255, 255, 0, 0.5);
-            padding: var(--padding);
-            margin: var(--padding);
-            border-radius: 8px;
+        /* Rich text styles */
+        .description h3 {
+            font-size: 1.1em;
+            margin: 1em 0 0.5em 0;
         }
 
-        .instructions h3 {
-            margin-bottom: 1em;
-            color: var(--text-color);
+        .description h3:first-child {
+            margin-top: 0;
         }
 
-        .instructions code {
-            background: rgba(0, 0, 0, 0.1);
+        .description ul, .description ol {
+            margin: 1em 0;
+            padding-left: 1.5em;
+        }
+
+        .description li {
+            list-style: disc;
+            margin: 0.5em 0;
+        }
+
+        .description ol li {
+            list-style: decimal;
+        }
+
+        .description blockquote {
+            border-left: 3px solid var(--wash1);
+            padding-left: 1em;
+            margin: 1em 0;
+            font-style: italic;
+        }
+
+        .description strong {
+            font-weight: 600;
+        }
+
+        .description em {
+            font-style: italic;
+        }
+
+        .description code {
+            background: var(--wash2);
             padding: 2px 6px;
             border-radius: 3px;
             font-family: monospace;
+            font-size: 0.9em;
+        }
+
+        /* Mobile optimizations */
+        @media (max-width: 768px) {
+            .description {
+                min-width: 80vw;
+                max-width: 80vw;
+            }
+            
+            .attachment {
+                height: 40vh;
+            }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <!-- Instructions Section -->
-        <div class="instructions">
-            <h3>📁 How to Add Your Content:</h3>
-            <p>1. Create a folder called <code>public/content/</code> in your project</p>
-            <p>2. Add your <code>profileData.json</code> file there</p>
-            <p>3. Add your images/videos to <code>public/media/</code> folder</p>
-            <p>4. Your profileData.json should follow the structure shown in the sample data below</p>
-            <p style="margin-top: 1em;"><strong>This yellow box will disappear when you add your real data!</strong></p>
-        </div>
-
-        <!-- Bio Section -->
-        <div class="bio">
-            <button class="toggle" onclick="toggleSection('bio')">
-                <h1>Your Name Here</h1>
-                <span>Info</span>
-            </button>
-            <div class="bioContent" id="bio">
-                <p>This is where your bio goes. Add a description about yourself, your work, and what you do. You can make this as long or as short as you want.</p>
-                <p>
-                    <a href="https://twitter.com" target="_blank">Twitter</a>, 
-                    <a href="https://instagram.com" target="_blank">Instagram</a>, 
-                    <a href="https://linkedin.com" target="_blank">LinkedIn</a>, 
-                    <a href="mailto:email@example.com">Email</a>
-                </p>
-            </div>
-        </div>
-
-        <!-- Projects Section -->
-        <div class="projects">
-            <!-- Project 1 -->
-            <div class="project">
-                <button class="toggle" onclick="toggleSection('project1')">
-                    <h2>Sample Project One</h2>
-                    <span>2024</span>
-                </button>
-                <div class="projectDetails" id="project1">
-                    <div class="attachments">
-                        <div class="attachmentsInner">
-                            <div class="description">
-                                <p>This is a sample project description. Replace this with your actual project description. You can include details about the project, your role, the technologies used, and the outcomes.</p>
-                                <p>Add multiple paragraphs if needed to fully explain your project.</p>
-                            </div>
-                            <div class="attachment">
-                                <div class="placeholder-image">Image 1</div>
-                            </div>
-                            <div class="attachment">
-                                <div class="placeholder-image">Image 2</div>
-                            </div>
-                            <div class="attachment">
-                                <div class="placeholder-image">Image 3</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Project 2 -->
-            <div class="project">
-                <button class="toggle" onclick="toggleSection('project2')">
-                    <h2>Sample Project Two</h2>
-                    <span>2023</span>
-                </button>
-                <div class="projectDetails" id="project2">
-                    <div class="attachments">
-                        <div class="attachmentsInner">
-                            <div class="description">
-                                <p>Another sample project. This template supports multiple projects with descriptions and media galleries.</p>
-                                <p>Each project can have its own set of images or videos that scroll horizontally.</p>
-                            </div>
-                            <div class="attachment">
-                                <div class="placeholder-image">Image 1</div>
-                            </div>
-                            <div class="attachment">
-                                <div class="placeholder-image">Image 2</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Project 3 -->
-            <div class="project">
-                <button class="toggle" onclick="toggleSection('project3')">
-                    <h2>Sample Project Three</h2>
-                    <span>2023</span>
-                </button>
-                <div class="projectDetails" id="project3">
-                    <div class="attachments">
-                        <div class="attachmentsInner">
-                            <div class="description">
-                                <p>A third sample project to show how the portfolio scales with multiple entries.</p>
-                            </div>
-                            <div class="attachment">
-                                <div class="placeholder-image">Image 1</div>
-                            </div>
-                            <div class="attachment">
-                                <div class="placeholder-image">Image 2</div>
-                            </div>
-                            <div class="attachment">
-                                <div class="placeholder-image">Image 3</div>
-                            </div>
-                            <div class="attachment">
-                                <div class="placeholder-image">Image 4</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+    <div class="container" id="app">
+        <div class="loading">Loading portfolio...</div>
     </div>
 
-    <!-- Sample profileData.json structure (for reference) -->
-    <script id="sample-data" type="application/json">
-    {
-        "general": {
-            "displayName": "Your Name Here",
-            "about": "Your bio text goes here...",
-            "sectionOrder": ["Projects", "Side Projects", "Contact"]
-        },
-        "projects": [
-            {
-                "title": "Project Name",
-                "year": "2024",
-                "description": "Project description...",
-                "attachments": [
-                    {
-                        "type": "image",
-                        "url": "/media/image1.jpg",
-                        "width": 1920,
-                        "height": 1080
-                    }
-                ]
-            }
-        ],
-        "sideProjects": [],
-        "contact": [
-            {
-                "platform": "Email",
-                "url": "mailto:your@email.com"
-            },
-            {
-                "platform": "LinkedIn",
-                "url": "https://linkedin.com/in/yourprofile"
-            }
-        ]
-    }
-    </script>
-
     <script>
-        // Simple toggle function for accordion sections
-        let activeSection = null;
+        // Function to parse rich text (basic HTML support)
+        function parseRichText(text) {
+            if (!text) return '';
+            
+            // Convert line breaks
+            text = text.replace(/\n\n/g, '</p><p>');
+            text = text.replace(/\n/g, '<br>');
+            
+            // Convert markdown-style formatting
+            text = text.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+            text = text.replace(/\*(.*?)\*/g, '<em>$1</em>');
+            
+            // Wrap in paragraph if not already
+            if (!text.startsWith('<p>')) {
+                text = '<p>' + text + '</p>';
+            }
+            
+            return text;
+        }
 
+        // Function to toggle sections
         function toggleSection(sectionId) {
             const section = document.getElementById(sectionId);
             const allSections = document.querySelectorAll('.bioContent, .projectDetails');
@@ -376,19 +332,184 @@
             
             // Toggle current section
             section.classList.toggle('active');
-            
-            // Track active section
-            if (section.classList.contains('active')) {
-                activeSection = sectionId;
-            } else {
-                activeSection = null;
-            }
         }
 
-        // Initialize with bio open
-        window.addEventListener('DOMContentLoaded', () => {
-            // Remove instructions if real data is detected
-            // This would be done when integrating with real data
+        // Function to render the portfolio
+        function renderPortfolio(data) {
+            const container = document.getElementById('app');
+            let html = '';
+            
+            // Bio Section
+            if (data.general) {
+                html += `
+                    <div class="bio">
+                        <button class="toggle" onclick="toggleSection('bio')">
+                            <h1>${data.general.displayName || 'Portfolio'}</h1>
+                            <span>Info</span>
+                        </button>
+                        <div class="bioContent" id="bio">
+                `;
+                
+                if (data.general.about) {
+                    html += parseRichText(data.general.about);
+                }
+                
+                if (data.contact && data.contact.length > 0) {
+                    html += '<p>';
+                    data.contact.forEach((contact, index) => {
+                        html += `<a href="${contact.url}" target="_blank">${contact.platform}</a>`;
+                        if (index < data.contact.length - 1) {
+                            html += ', ';
+                        }
+                    });
+                    html += '</p>';
+                }
+                
+                html += `
+                        </div>
+                    </div>
+                `;
+            }
+            
+            // Projects Section
+            html += '<div class="projects">';
+            
+            // Combine projects and sideProjects
+            const allProjects = [];
+            if (data.projects) allProjects.push(...data.projects);
+            if (data.sideProjects) allProjects.push(...data.sideProjects);
+            
+            // Sort by year (newest first)
+            allProjects.sort((a, b) => {
+                const yearA = parseInt(a.year) || 0;
+                const yearB = parseInt(b.year) || 0;
+                return yearB - yearA;
+            });
+            
+            // Render each project
+            allProjects.forEach((project, index) => {
+                // Skip projects without attachments
+                if (!project.attachments || project.attachments.length === 0) {
+                    return;
+                }
+                
+                const projectId = `project-${index}`;
+                
+                html += `
+                    <div class="project">
+                        <button class="toggle" onclick="toggleSection('${projectId}')">
+                            <h2>${project.title || 'Untitled Project'}</h2>
+                            <span class="year">${project.year || ''}</span>
+                        </button>
+                        <div class="projectDetails" id="${projectId}">
+                            <div class="attachments">
+                                <div class="attachmentsInner">
+                `;
+                
+                // Add description if exists
+                if (project.description) {
+                    html += `
+                        <div class="description">
+                            ${parseRichText(project.description)}
+                        </div>
+                    `;
+                }
+                
+                // Add attachments
+                project.attachments.forEach(attachment => {
+                    const mediaPath = attachment.url.startsWith('http') ? 
+                        attachment.url : 
+                        `content${attachment.url.startsWith('/') ? '' : '/'}${attachment.url}`;
+                    
+                    if (attachment.type === 'video') {
+                        html += `
+                            <div class="attachment">
+                                <div class="attachment-wrapper">
+                                    <video src="${mediaPath}" autoplay muted loop playsinline></video>
+                                </div>
+                            </div>
+                        `;
+                    } else {
+                        html += `
+                            <div class="attachment">
+                                <div class="attachment-wrapper">
+                                    <img src="${mediaPath}" alt="${project.title}" loading="lazy">
+                                </div>
+                            </div>
+                        `;
+                    }
+                });
+                
+                html += `
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            });
+            
+            html += '</div>';
+            
+            container.innerHTML = html;
+        }
+
+        // Load the profile data
+        fetch('content/profileData.json')
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Could not load profileData.json');
+                }
+                return response.json();
+            })
+            .then(data => {
+                renderPortfolio(data);
+                // Open bio by default
+                setTimeout(() => {
+                    document.getElementById('bio').classList.add('active');
+                }, 100);
+            })
+            .catch(error => {
+                console.error('Error loading portfolio:', error);
+                document.getElementById('app').innerHTML = `
+                    <div class="error">
+                        <h2>Error Loading Portfolio</h2>
+                        <p>${error.message}</p>
+                        <p>Make sure your profileData.json file is in the content folder.</p>
+                    </div>
+                `;
+            });
+
+        // Add horizontal scroll with mouse drag
+        document.addEventListener('DOMContentLoaded', () => {
+            const attachmentContainers = document.querySelectorAll('.attachments');
+            
+            attachmentContainers.forEach(container => {
+                let isDown = false;
+                let startX;
+                let scrollLeft;
+                
+                container.addEventListener('mousedown', (e) => {
+                    isDown = true;
+                    startX = e.pageX - container.offsetLeft;
+                    scrollLeft = container.scrollLeft;
+                });
+                
+                container.addEventListener('mouseleave', () => {
+                    isDown = false;
+                });
+                
+                container.addEventListener('mouseup', () => {
+                    isDown = false;
+                });
+                
+                container.addEventListener('mousemove', (e) => {
+                    if (!isDown) return;
+                    e.preventDefault();
+                    const x = e.pageX - container.offsetLeft;
+                    const walk = (x - startX) * 2;
+                    container.scrollLeft = scrollLeft - walk;
+                });
+            });
         });
     </script>
 </body>
