@@ -73,6 +73,49 @@
       "title": "QuikTrip",
       "company": "No Box Studios"
     },
+{
+  "id": "Life-Church",
+  "year": "2025",
+  "heading": "Life.church",
+  "url": "https://www.life.church/",
+  "collaborators": [],
+  "description": "Interview setup to showcase lives changed at Switch. Baptism capture.",
+  "attachments": [
+    {
+      "type": "video",
+      "width": 1920,
+      "height": 1080,
+      "url": "/content/media/Life-Church-1.mp4"
+    },
+    {
+      "type": "video",
+      "width": 1920,
+      "height": 1080,
+      "url": "/content/media/Life-Church-2.mp4"
+    },
+    {
+      "type": "image",
+      "width": 1667,
+      "height": 2500,
+      "url": "/content/media/Life-Church-3.jpg"
+    },
+    {
+      "type": "image",
+      "width": 1667,
+      "height": 2500,
+      "url": "/content/media/Life-Church-4.jpg"
+    },
+    {
+      "type": "image",
+      "width": 2000,
+      "height": 1333,
+      "url": "/content/media/Life-Church-5.jpg"
+    }
+  ],
+  "type": "project",
+  "title": "Life.church",
+  "company": ""
+},
     {
       "id": "5tAGI5FMc675daZLnWQN",
       "year": "2024",
