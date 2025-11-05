@@ -944,20 +944,8 @@
   "certifications": [],
   "contact": [
     {
-      "id": "d44KysUVtboB3Wi87aTa",
-      "platform": "boysgetbored",
-      "handle": "boysgetbored",
-      "url": "http://www.boysgetbored.com"
-    },
-    {
-      "id": "SwlntJralirvdBtL42sA",
-      "platform": "Website",
-      "handle": "thecolechandler.com",
-      "url": "http://www.thecolechandler.com"
-    },
-    {
       "id": "bQb9QOkWw2PuGzOjVgGu",
-      "platform": "Email",
+      "platform": "Contact",
       "handle": "colechandler0@gmail.com",
       "url": "mailto:colechandler0@gmail.com"
     }
@@ -1860,20 +1848,8 @@
       "name": "Contact",
       "items": [
         {
-          "id": "d44KysUVtboB3Wi87aTa",
-          "platform": "boysgetbored",
-          "handle": "boysgetbored",
-          "url": "http://www.boysgetbored.com"
-        },
-        {
-          "id": "SwlntJralirvdBtL42sA",
-          "platform": "Website",
-          "handle": "thecolechandler.com",
-          "url": "http://www.thecolechandler.com"
-        },
-        {
           "id": "bQb9QOkWw2PuGzOjVgGu",
-          "platform": "Email",
+          "platform": "Contact",
           "handle": "colechandler0@gmail.com",
           "url": "mailto:colechandler0@gmail.com"
         }
