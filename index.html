@@ -1,9 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Playfair+Display:wght@400;500;600&display=swap"
+        rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -13,23 +19,25 @@
         }
 
         :root {
-            --font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            --font-family: 'Inter', sans-serif;
+            --font-family-heading: 'Playfair Display', serif;
             --font-size: clamp(16px, 2vmin, 24px);
-            --text-color: #fff;
+            --text-color: #E0E0E0;
             --line-height: 1.6;
-            --background-color: #00F;
+            --background-color: #050505;
             --image-height: 50vh;
             --padding: clamp(16px, 3vmin, 32px);
-            --wash1: rgba(0, 0, 0, 0.1);
-            --wash2: rgba(0, 0, 0, 0.05);
+            --wash1: rgba(255, 255, 255, 0.1);
+            --wash2: rgba(255, 255, 255, 0.05);
         }
 
+        /* Dark mode is default now, but keeping media query just in case */
         @media (prefers-color-scheme: dark) {
             :root {
-                --text-color: #fff;
-                --background-color: #00F;
-                --wash1: rgba(255, 255, 255, 0.3);
-                --wash2: rgba(255, 255, 255, 0.2);
+                --text-color: #E0E0E0;
+                --background-color: #050505;
+                --wash1: rgba(255, 255, 255, 0.1);
+                --wash2: rgba(255, 255, 255, 0.05);
             }
         }
 
@@ -88,7 +96,8 @@
         }
 
         .bio {
-            border-bottom: 1px solid var(--wash2);
+            border-bottom: 1px solid var(--wash1);
+            padding: 2rem 0;
         }
 
         .bioContent {
@@ -104,10 +113,12 @@
             opacity: 1;
         }
 
-        h1, h2 {
+        h1,
+        h2 {
             font-size: var(--font-size);
             text-align: left;
             flex: 1;
+            font-family: var(--font-family-heading);
         }
 
         h1 {
@@ -147,7 +158,8 @@
         .project {
             position: relative;
             overflow: hidden;
-            border-bottom: 1px solid var(--wash2);
+            border-bottom: 1px solid var(--wash1);
+            padding: 1rem 0;
         }
 
         .project:last-child {
@@ -171,6 +183,7 @@
             overflow-x: auto;
             padding: 0 var(--padding) var(--padding);
             cursor: grab;
+            scroll-snap-type: x mandatory;
         }
 
         .attachments:active {
@@ -209,6 +222,7 @@
             position: relative;
             height: var(--image-height);
             flex-shrink: 0;
+            scroll-snap-align: center;
         }
 
         .attachment img,
@@ -228,8 +242,11 @@
         }
 
         .year {
-            opacity: 0.7;
+            opacity: 0.5;
             white-space: nowrap;
+            font-family: var(--font-family);
+            font-size: 0.9em;
+            letter-spacing: 0.05em;
         }
 
         /* Rich text styles */
@@ -242,7 +259,8 @@
             margin-top: 0;
         }
 
-        .description ul, .description ol {
+        .description ul,
+        .description ol {
             margin: 1em 0;
             padding-left: 1.5em;
         }
@@ -285,13 +303,14 @@
                 min-width: 80vw;
                 max-width: 80vw;
             }
-            
+
             .attachment {
                 height: 40vh;
             }
         }
     </style>
 </head>
+
 <body>
     <div class="container" id="app">
         <div class="loading">Loading portfolio...</div>
@@ -301,20 +320,20 @@
         // Function to parse rich text (basic HTML support)
         function parseRichText(text) {
             if (!text) return '';
-            
+
             // Convert line breaks
             text = text.replace(/\n\n/g, '</p><p>');
             text = text.replace(/\n/g, '<br>');
-            
+
             // Convert markdown-style formatting
             text = text.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
             text = text.replace(/\*(.*?)\*/g, '<em>$1</em>');
-            
+
             // Wrap in paragraph if not already
             if (!text.startsWith('<p>')) {
                 text = '<p>' + text + '</p>';
             }
-            
+
             return text;
         }
 
@@ -322,14 +341,14 @@
         function toggleSection(sectionId) {
             const section = document.getElementById(sectionId);
             const allSections = document.querySelectorAll('.bioContent, .projectDetails');
-            
+
             // Close all other sections
             allSections.forEach(s => {
                 if (s.id !== sectionId) {
                     s.classList.remove('active');
                 }
             });
-            
+
             // Toggle current section
             section.classList.toggle('active');
         }
@@ -338,7 +357,7 @@
         function renderPortfolio(data) {
             const container = document.getElementById('app');
             let html = '';
-            
+
             // Bio Section
             if (data.general) {
                 html += `
@@ -349,11 +368,11 @@
                         </button>
                         <div class="bioContent" id="bio">
                 `;
-                
+
                 if (data.general.about) {
                     html += parseRichText(data.general.about);
                 }
-                
+
                 if (data.contact && data.contact.length > 0) {
                     html += '<p>';
                     data.contact.forEach((contact, index) => {
@@ -364,37 +383,37 @@
                     });
                     html += '</p>';
                 }
-                
+
                 html += `
                         </div>
                     </div>
                 `;
             }
-            
+
             // Projects Section
             html += '<div class="projects">';
-            
+
             // Combine projects and sideProjects
             const allProjects = [];
             if (data.projects) allProjects.push(...data.projects);
             if (data.sideProjects) allProjects.push(...data.sideProjects);
-            
+
             // Sort by year (newest first)
             allProjects.sort((a, b) => {
                 const yearA = parseInt(a.year) || 0;
                 const yearB = parseInt(b.year) || 0;
                 return yearB - yearA;
             });
-            
+
             // Render each project
             allProjects.forEach((project, index) => {
                 // Skip projects without attachments
                 if (!project.attachments || project.attachments.length === 0) {
                     return;
                 }
-                
+
                 const projectId = `project-${index}`;
-                
+
                 html += `
                     <div class="project">
                         <button class="toggle" onclick="toggleSection('${projectId}')">
@@ -405,7 +424,7 @@
                             <div class="attachments">
                                 <div class="attachmentsInner">
                 `;
-                
+
                 // Add description if exists
                 if (project.description) {
                     html += `
@@ -414,14 +433,14 @@
                         </div>
                     `;
                 }
-                
+
                 // Add attachments
                 project.attachments.forEach(attachment => {
                     // Remove leading slash from URL since it starts with /content/media/
-                    const mediaPath = attachment.url.startsWith('http') ? 
-                        attachment.url : 
+                    const mediaPath = attachment.url.startsWith('http') ?
+                        attachment.url :
                         attachment.url.substring(1);  // Remove the leading /
-                    
+
                     if (attachment.type === 'video') {
                         html += `
                             <div class="attachment">
@@ -440,7 +459,7 @@
                         `;
                     }
                 });
-                
+
                 html += `
                                 </div>
                             </div>
@@ -448,9 +467,9 @@
                     </div>
                 `;
             });
-            
+
             html += '</div>';
-            
+
             container.innerHTML = html;
         }
 
@@ -483,26 +502,26 @@
         // Add horizontal scroll with mouse drag
         document.addEventListener('DOMContentLoaded', () => {
             const attachmentContainers = document.querySelectorAll('.attachments');
-            
+
             attachmentContainers.forEach(container => {
                 let isDown = false;
                 let startX;
                 let scrollLeft;
-                
+
                 container.addEventListener('mousedown', (e) => {
                     isDown = true;
                     startX = e.pageX - container.offsetLeft;
                     scrollLeft = container.scrollLeft;
                 });
-                
+
                 container.addEventListener('mouseleave', () => {
                     isDown = false;
                 });
-                
+
                 container.addEventListener('mouseup', () => {
                     isDown = false;
                 });
-                
+
                 container.addEventListener('mousemove', (e) => {
                     if (!isDown) return;
                     e.preventDefault();
@@ -514,4 +533,5 @@
         });
     </script>
 </body>
+
 </html>
