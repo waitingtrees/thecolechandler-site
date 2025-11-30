@@ -1,10 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio</title>
+    <title>Cole Chandler | Videographer & Filmmaker in Tulsa, OK</title>
+    <meta name="description" content="Professional videographer, cinematographer, and editor based in Tulsa, Oklahoma. Specializing in corporate, commercial, and event video production. Expert in DaVinci Resolve and Adobe Suite.">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://thecolechandler.com/">
+    <meta property="og:title" content="Cole Chandler | Videographer & Filmmaker in Tulsa, OK">
+    <meta property="og:description" content="Professional videographer, cinematographer, and editor based in Tulsa, Oklahoma. Specializing in corporate, commercial, and event video production.">
+    <meta property="og:image" content="https://thecolechandler.com/content/media/profilePhoto.jpg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://thecolechandler.com/">
+    <meta property="twitter:title" content="Cole Chandler | Videographer & Filmmaker in Tulsa, OK">
+    <meta property="twitter:description" content="Professional videographer, cinematographer, and editor based in Tulsa, Oklahoma. Specializing in corporate, commercial, and event video production.">
+    <meta property="twitter:image" content="https://thecolechandler.com/content/media/profilePhoto.jpg">
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Person",
+          "name": "Cole Chandler",
+          "url": "https://thecolechandler.com",
+          "image": "https://thecolechandler.com/content/media/profilePhoto.jpg",
+          "jobTitle": "Videographer",
+          "worksFor": {
+            "@type": "Organization",
+            "name": "Freelance"
+          },
+          "sameAs": [
+            "https://www.instagram.com/thecolechandler",
+            "https://www.linkedin.com/in/thecolechandler"
+          ]
+        },
+        {
+          "@type": "ProfessionalService",
+          "name": "Cole Chandler Videography",
+          "image": "https://thecolechandler.com/content/media/profilePhoto.jpg",
+          "url": "https://thecolechandler.com",
+          "telephone": "",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Tulsa",
+            "addressRegion": "OK",
+            "addressCountry": "US"
+          },
+          "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": 36.1540,
+            "longitude": -95.9928
+          },
+          "priceRange": "$$$"
+        }
+      ]
+    }
+    </script>
     <style>
         * {
             margin: 0;
@@ -105,8 +162,7 @@
             opacity: 1;
         }
 
-        h1,
-        h2 {
+        h1, h2 {
             font-size: var(--font-size);
             text-align: left;
             flex: 1;
@@ -244,8 +300,7 @@
             margin-top: 0;
         }
 
-        .description ul,
-        .description ol {
+        .description ul, .description ol {
             margin: 1em 0;
             padding-left: 1.5em;
         }
@@ -288,14 +343,13 @@
                 min-width: 80vw;
                 max-width: 80vw;
             }
-
+            
             .attachment {
                 height: 40vh;
             }
         }
     </style>
 </head>
-
 <body>
     <div class="container" id="app">
         <div class="loading">Loading portfolio...</div>
@@ -305,20 +359,20 @@
         // Function to parse rich text (basic HTML support)
         function parseRichText(text) {
             if (!text) return '';
-
+            
             // Convert line breaks
             text = text.replace(/\n\n/g, '</p><p>');
             text = text.replace(/\n/g, '<br>');
-
+            
             // Convert markdown-style formatting
             text = text.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
             text = text.replace(/\*(.*?)\*/g, '<em>$1</em>');
-
+            
             // Wrap in paragraph if not already
             if (!text.startsWith('<p>')) {
                 text = '<p>' + text + '</p>';
             }
-
+            
             return text;
         }
 
@@ -326,14 +380,14 @@
         function toggleSection(sectionId) {
             const section = document.getElementById(sectionId);
             const allSections = document.querySelectorAll('.bioContent, .projectDetails');
-
+            
             // Close all other sections
             allSections.forEach(s => {
                 if (s.id !== sectionId) {
                     s.classList.remove('active');
                 }
             });
-
+            
             // Toggle current section
             section.classList.toggle('active');
         }
@@ -342,7 +396,7 @@
         function renderPortfolio(data) {
             const container = document.getElementById('app');
             let html = '';
-
+            
             // Bio Section
             if (data.general) {
                 html += `
@@ -353,11 +407,11 @@
                         </button>
                         <div class="bioContent" id="bio">
                 `;
-
+                
                 if (data.general.about) {
                     html += parseRichText(data.general.about);
                 }
-
+                
                 if (data.contact && data.contact.length > 0) {
                     html += '<p>';
                     data.contact.forEach((contact, index) => {
@@ -368,37 +422,37 @@
                     });
                     html += '</p>';
                 }
-
+                
                 html += `
                         </div>
                     </div>
                 `;
             }
-
+            
             // Projects Section
             html += '<div class="projects">';
-
+            
             // Combine projects and sideProjects
             const allProjects = [];
             if (data.projects) allProjects.push(...data.projects);
             if (data.sideProjects) allProjects.push(...data.sideProjects);
-
+            
             // Sort by year (newest first)
             allProjects.sort((a, b) => {
                 const yearA = parseInt(a.year) || 0;
                 const yearB = parseInt(b.year) || 0;
                 return yearB - yearA;
             });
-
+            
             // Render each project
             allProjects.forEach((project, index) => {
                 // Skip projects without attachments
                 if (!project.attachments || project.attachments.length === 0) {
                     return;
                 }
-
+                
                 const projectId = `project-${index}`;
-
+                
                 html += `
                     <div class="project">
                         <button class="toggle" onclick="toggleSection('${projectId}')">
@@ -409,7 +463,7 @@
                             <div class="attachments">
                                 <div class="attachmentsInner">
                 `;
-
+                
                 // Add description if exists
                 if (project.description) {
                     html += `
@@ -418,14 +472,14 @@
                         </div>
                     `;
                 }
-
+                
                 // Add attachments
                 project.attachments.forEach(attachment => {
                     // Remove leading slash from URL since it starts with /content/media/
-                    const mediaPath = attachment.url.startsWith('http') ?
-                        attachment.url :
+                    const mediaPath = attachment.url.startsWith('http') ? 
+                        attachment.url : 
                         attachment.url.substring(1);  // Remove the leading /
-
+                    
                     if (attachment.type === 'video') {
                         html += `
                             <div class="attachment">
@@ -444,7 +498,7 @@
                         `;
                     }
                 });
-
+                
                 html += `
                                 </div>
                             </div>
@@ -452,9 +506,9 @@
                     </div>
                 `;
             });
-
+            
             html += '</div>';
-
+            
             container.innerHTML = html;
         }
 
@@ -487,26 +541,26 @@
         // Add horizontal scroll with mouse drag
         document.addEventListener('DOMContentLoaded', () => {
             const attachmentContainers = document.querySelectorAll('.attachments');
-
+            
             attachmentContainers.forEach(container => {
                 let isDown = false;
                 let startX;
                 let scrollLeft;
-
+                
                 container.addEventListener('mousedown', (e) => {
                     isDown = true;
                     startX = e.pageX - container.offsetLeft;
                     scrollLeft = container.scrollLeft;
                 });
-
+                
                 container.addEventListener('mouseleave', () => {
                     isDown = false;
                 });
-
+                
                 container.addEventListener('mouseup', () => {
                     isDown = false;
                 });
-
+                
                 container.addEventListener('mousemove', (e) => {
                     if (!isDown) return;
                     e.preventDefault();
@@ -518,5 +572,4 @@
         });
     </script>
 </body>
-
 </html>
