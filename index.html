@@ -593,7 +593,7 @@
                     span.textContent = char;
                     span.className = 'char';
                     if (char === ' ') {
-                        span.style.whiteSpace = 'pre'; // Preserve spaces
+                        span.style.whiteSpace = 'pre-wrap'; // Preserve spaces but allow wrapping
                     }
                     fragment.appendChild(span);
                 }
