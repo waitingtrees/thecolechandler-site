@@ -154,22 +154,22 @@
         }
 
         .bioContent {
-            padding: 0 var(--padding) var(--padding);
-            max-height: 0;
+            display: grid;
+            grid-template-rows: 0fr;
             overflow: hidden;
-            transition: max-height 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+            transition: grid-template-rows 0.32s cubic-bezier(0.25, 1, 0.5, 1);
         }
 
-        .bioContent.active {
-            max-height: 1000px;
-        }
+        .bioContent.active { grid-template-rows: 1fr; }
+        .sectionInner { min-height: 0; overflow: hidden; }
+        .bioBody { padding: 0 var(--padding) var(--padding); }
 
         /* Magic Swipe Animation */
         .char {
             opacity: 0;
-            filter: blur(10px);
-            transition: opacity 0.5s ease, filter 0.5s ease;
-            transition-delay: calc(var(--char-index) * 5ms);
+            filter: blur(4px);
+            transition: opacity 0.24s ease, filter 0.24s ease;
+            transition-delay: calc(min(var(--char-index), 70) * 2ms);
         }
 
         .bioContent.active .char,
@@ -186,7 +186,6 @@
         }
 
         .bioContent.active {
-            max-height: 1000px;
             opacity: 1;
             filter: blur(0);
         }
@@ -244,13 +243,14 @@
 
 
         .projectDetails {
-            max-height: 0;
+            display: grid;
+            grid-template-rows: 0fr;
             overflow: hidden;
-            transition: max-height 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+            transition: grid-template-rows 0.32s cubic-bezier(0.25, 1, 0.5, 1);
         }
 
         .projectDetails.active {
-            max-height: 3000px;
+            grid-template-rows: 1fr;
         }
 
         .attachments {
@@ -262,8 +262,16 @@
             cursor: grab;
         }
 
-        .attachments:active {
+        .attachments.is-dragging {
             cursor: grabbing;
+            user-select: none;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .bioContent, .projectDetails, .char {
+                transition: none !important;
+                transition-delay: 0ms !important;
+            }
         }
 
         .attachments::-webkit-scrollbar {
@@ -303,7 +311,7 @@
         .attachment img,
         .attachment video {
             height: 100%;
-            width: auto;
+            width: 100%;
             max-width: 90vw;
             object-fit: contain;
             display: block;
@@ -499,20 +507,98 @@
             return text;
         }
 
-        // Function to toggle sections
-        function toggleSection(sectionId) {
-            const section = document.getElementById(sectionId);
-            const allSections = document.querySelectorAll('.bioContent, .projectDetails');
-
-            // Close all other sections
-            allSections.forEach(s => {
-                if (s.id !== sectionId) {
-                    s.classList.remove('active');
+        const mediaLoader = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting && entry.target.closest('.projectDetails.active')) {
+                    loadMedia(entry.target);
                 }
             });
+        }, { rootMargin: '200px', threshold: 0 });
 
-            // Toggle current section
-            section.classList.toggle('active');
+        const videoPlayback = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                const video = entry.target;
+                if (entry.isIntersecting && video.closest('.projectDetails.active') &&
+                    !document.hidden && !document.querySelector('dialog[open]')) {
+                    loadMedia(video);
+                    video.play().catch(() => { video.controls = true; });
+                } else {
+                    video.pause();
+                }
+            });
+        }, { threshold: 0.01 });
+
+        function loadMedia(media) {
+            if (!media.getAttribute('src') && media.dataset.src) {
+                media.src = media.dataset.src;
+            }
+        }
+
+        function pauseVideos(section = document) {
+            section.querySelectorAll('video').forEach(video => video.pause());
+        }
+
+        function observeSectionMedia(section) {
+            section.querySelectorAll('[data-src]').forEach(media => {
+                mediaLoader.unobserve(media);
+                mediaLoader.observe(media);
+                if (media.tagName === 'VIDEO') {
+                    videoPlayback.unobserve(media);
+                    videoPlayback.observe(media);
+                }
+            });
+        }
+
+        document.addEventListener('visibilitychange', () => {
+            if (document.hidden) pauseVideos();
+            else document.querySelectorAll('.projectDetails.active').forEach(observeSectionMedia);
+        });
+
+        function setSectionOpen(section, open) {
+            section.classList.toggle('active', open);
+            section.inert = !open;
+            const button = document.querySelector(`[aria-controls="${section.id}"]`);
+            button?.setAttribute('aria-expanded', String(open));
+            if (open) observeSectionMedia(section);
+            else pauseVideos(section);
+        }
+
+        function toggleSection(sectionId) {
+            const section = document.getElementById(sectionId);
+            const open = !section.classList.contains('active');
+            document.querySelectorAll('.bioContent, .projectDetails').forEach(other => {
+                if (other !== section && other.classList.contains('active')) setSectionOpen(other, false);
+            });
+            setSectionOpen(section, open);
+        }
+
+        function setupGalleryDrag() {
+            document.querySelectorAll('.attachments').forEach(container => {
+                let drag = null;
+                const finish = () => {
+                    drag = null;
+                    container.classList.remove('is-dragging');
+                };
+                container.addEventListener('pointerdown', event => {
+                    if (event.pointerType !== 'mouse' || event.button !== 0) return;
+                    drag = { x: event.clientX, scroll: container.scrollLeft };
+                });
+                container.addEventListener('pointermove', event => {
+                    if (!drag) return;
+                    const distance = event.clientX - drag.x;
+                    if (Math.abs(distance) < 4 && !container.classList.contains('is-dragging')) return;
+                    container.classList.add('is-dragging');
+                    container.setPointerCapture(event.pointerId);
+                    event.preventDefault();
+                    container.scrollLeft = drag.scroll - distance;
+                });
+                container.addEventListener('pointerup', finish);
+                container.addEventListener('pointercancel', finish);
+                container.addEventListener('lostpointercapture', finish);
+                container.addEventListener('pointerleave', event => {
+                    if (!container.hasPointerCapture(event.pointerId)) finish();
+                });
+            });
         }
 
         // Function to render the portfolio
@@ -524,11 +610,11 @@
             if (data.general) {
                 html += `
                     <div class="bio">
-                        <button class="toggle" onclick="toggleSection('bio')">
+                        <button class="toggle" onclick="toggleSection('bio')" aria-controls="bio" aria-expanded="false">
                             <h1>${data.general.displayName || 'Portfolio'}</h1>
                             <span>Info</span>
                         </button>
-                        <div class="bioContent" id="bio">
+                        <div class="bioContent" id="bio" inert><div class="sectionInner"><div class="bioBody">
                 `;
 
                 if (data.general.about) {
@@ -554,7 +640,7 @@
                 }
 
                 html += `
-                        </div>
+                        </div></div></div>
                     </div>
                 `;
             }
@@ -583,11 +669,11 @@
 
                 html += `
                     <div class="project">
-                        <button class="toggle" onclick="toggleSection('${projectId}')">
+                        <button class="toggle" onclick="toggleSection('${projectId}')" aria-controls="${projectId}" aria-expanded="false">
                             <h2>${project.title || 'Untitled Project'}</h2>
                         </button>
-                        <div class="projectDetails" id="${projectId}">
-                            <div class="attachments">
+                        <div class="projectDetails" id="${projectId}" inert>
+                            <div class="sectionInner"><div class="attachments">
                                 <div class="attachmentsInner">
                 `;
 
@@ -602,6 +688,9 @@
 
                 // Add attachments
                 project.attachments.forEach(attachment => {
+                    const width = Number(attachment.width) || 1920;
+                    const height = Number(attachment.height) || 1080;
+                    const mediaWidth = `width: min(calc(var(--image-height) * ${width / height}), 90vw)`;
                     // Remove leading slash from URL since it starts with /content/media/
                     const mediaPath = attachment.url.startsWith('http') ?
                         attachment.url :
@@ -610,16 +699,16 @@
                     if (attachment.type === 'video') {
                         html += `
                             <div class="attachment">
-                                <div class="attachment-wrapper">
-                                    <video src="${mediaPath}" autoplay muted loop playsinline></video>
+                                <div class="attachment-wrapper" style="${mediaWidth}">
+                                    <video data-src="${mediaPath}" width="${width}" height="${height}" preload="none" muted loop playsinline></video>
                                 </div>
                             </div>
                         `;
                     } else {
                         html += `
                             <div class="attachment">
-                                <div class="attachment-wrapper">
-                                    <img src="${mediaPath}" alt="${project.title}" loading="lazy">
+                                <div class="attachment-wrapper" style="${mediaWidth}">
+                                    <img data-src="${mediaPath}" width="${width}" height="${height}" alt="${project.title}" decoding="async" draggable="false">
                                 </div>
                             </div>
                         `;
@@ -628,7 +717,7 @@
 
                 html += `
                                 </div>
-                            </div>
+                            </div></div>
                         </div>
                     </div>
                 `;
@@ -662,7 +751,14 @@
             container.innerHTML = html;
 
             const dialog = document.getElementById('contact-dialog');
-            document.querySelector('[data-open-contact]')?.addEventListener('click', () => dialog.showModal());
+            document.querySelector('[data-open-contact]')?.addEventListener('click', () => {
+                pauseVideos();
+                dialog.showModal();
+            });
+            dialog.addEventListener('close', () => {
+                document.querySelectorAll('.projectDetails.active').forEach(observeSectionMedia);
+            });
+            setupGalleryDrag();
             document.querySelector('[data-close-contact]').addEventListener('click', () => dialog.close());
             document.getElementById('contact-form').addEventListener('submit', sendInquiry);
         }
@@ -726,7 +822,7 @@
 
                 // Open bio by default
                 setTimeout(() => {
-                    document.getElementById('bio').classList.add('active');
+                    setSectionOpen(document.getElementById('bio'), true);
                 }, 100);
             })
             .catch(error => {
@@ -773,38 +869,6 @@
             });
         }
 
-        // Add horizontal scroll with mouse drag
-        document.addEventListener('DOMContentLoaded', () => {
-            const attachmentContainers = document.querySelectorAll('.attachments');
-
-            attachmentContainers.forEach(container => {
-                let isDown = false;
-                let startX;
-                let scrollLeft;
-
-                container.addEventListener('mousedown', (e) => {
-                    isDown = true;
-                    startX = e.pageX - container.offsetLeft;
-                    scrollLeft = container.scrollLeft;
-                });
-
-                container.addEventListener('mouseleave', () => {
-                    isDown = false;
-                });
-
-                container.addEventListener('mouseup', () => {
-                    isDown = false;
-                });
-
-                container.addEventListener('mousemove', (e) => {
-                    if (!isDown) return;
-                    e.preventDefault();
-                    const x = e.pageX - container.offsetLeft;
-                    const walk = (x - startX) * 2;
-                    container.scrollLeft = scrollLeft - walk;
-                });
-            });
-        });
     </script>
 </body>
 
