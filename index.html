@@ -316,10 +316,100 @@
             background: var(--wash2);
         }
 
-        .year {
-            opacity: 0.7;
-            white-space: nowrap;
+        .text-link {
+            border: 0;
+            border-bottom: 1px solid var(--wash1);
+            padding: 0;
+            background: transparent;
+            color: inherit;
+            font: inherit;
+            line-height: inherit;
+            cursor: pointer;
         }
+
+        .text-link:hover { opacity: 0.7; }
+
+        .text-link:focus-visible,
+        .contact-dialog button:focus-visible {
+            outline: 2px solid currentColor;
+            outline-offset: 4px;
+        }
+
+        .contact-dialog {
+            position: fixed;
+            inset: 0;
+            margin: auto;
+            width: min(520px, calc(100% - 32px));
+            max-height: calc(100dvh - 32px);
+            overflow-y: auto;
+            padding: clamp(20px, 4vw, 32px);
+            border: 1px solid rgba(255, 255, 255, 0.45);
+            background: var(--background-color);
+            color: var(--text-color);
+            font: inherit;
+        }
+
+        .contact-dialog::backdrop {
+            background: rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(4px);
+        }
+
+        .contact-header {
+            display: flex;
+            align-items: baseline;
+            justify-content: space-between;
+            gap: 24px;
+            margin-bottom: 24px;
+        }
+
+        .contact-dialog h2 { font-weight: 500; }
+
+        .contact-dialog label {
+            display: block;
+            margin-bottom: 18px;
+        }
+
+        .contact-dialog input,
+        .contact-dialog textarea {
+            display: block;
+            width: 100%;
+            margin-top: 6px;
+            padding: 10px 12px;
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            border-radius: 0;
+            background: transparent;
+            color: inherit;
+            font: inherit;
+        }
+
+        .contact-dialog textarea {
+            min-height: 130px;
+            resize: vertical;
+        }
+
+        .contact-dialog input:focus,
+        .contact-dialog textarea:focus {
+            outline: 2px solid white;
+            outline-offset: 2px;
+        }
+
+        .contact-dialog input::placeholder,
+        .contact-dialog textarea::placeholder {
+            color: rgba(255, 255, 255, 0.65);
+        }
+
+        .contact-send {
+            padding: 10px 18px;
+            border: 1px solid white;
+            background: white;
+            color: var(--background-color);
+            font: inherit;
+            cursor: pointer;
+        }
+
+        .contact-send:disabled { opacity: 0.65; cursor: wait; }
+        .contact-status { margin-top: 14px; margin-bottom: 0; }
+        .contact-honey { display: none !important; }
 
         /* Rich text styles */
         .description h3 {
@@ -448,10 +538,14 @@
                 if (data.contact && data.contact.length > 0) {
                     html += '<p>';
                     data.contact.forEach((contact, index) => {
-                        const linkAttributes = /^https?:/i.test(contact.url)
-                            ? ' target="_blank" rel="noopener noreferrer"'
-                            : '';
-                        html += `<a href="${contact.url}"${linkAttributes}>${contact.platform}</a>`;
+                        if (contact.platform === 'Contact') {
+                            html += '<button type="button" class="text-link" data-open-contact aria-haspopup="dialog" aria-controls="contact-dialog">Contact</button>';
+                        } else {
+                            const linkAttributes = /^https?:/i.test(contact.url)
+                                ? ' target="_blank" rel="noopener noreferrer"'
+                                : '';
+                            html += `<a href="${contact.url}"${linkAttributes}>${contact.platform}</a>`;
+                        }
                         if (index < data.contact.length - 1) {
                             html += ', ';
                         }
@@ -473,14 +567,9 @@
             if (data.projects) allProjects.push(...data.projects);
             if (data.sideProjects) allProjects.push(...data.sideProjects);
 
-            // Show featured client work first, then sort by year (newest first).
+            // Lead with commercial work that supports repeat client engagements.
             allProjects.sort((a, b) => {
-                const featuredA = a.featuredOrder ?? Infinity;
-                const featuredB = b.featuredOrder ?? Infinity;
-                if (featuredA !== featuredB) return featuredA - featuredB;
-                const yearA = parseInt(a.year) || 0;
-                const yearB = parseInt(b.year) || 0;
-                return yearB - yearA;
+                return (a.displayOrder ?? Infinity) - (b.displayOrder ?? Infinity);
             });
 
             // Render each project
@@ -496,7 +585,6 @@
                     <div class="project">
                         <button class="toggle" onclick="toggleSection('${projectId}')">
                             <h2>${project.title || 'Untitled Project'}</h2>
-                            <span class="year">${project.year || ''}</span>
                         </button>
                         <div class="projectDetails" id="${projectId}">
                             <div class="attachments">
@@ -546,9 +634,75 @@
                 `;
             });
 
-            html += '</div>';
+            html += `</div>
+                <dialog class="contact-dialog" id="contact-dialog" aria-labelledby="contact-heading">
+                    <div class="contact-header">
+                        <h2 id="contact-heading">Tell me about your project.</h2>
+                        <button type="button" class="text-link" data-close-contact aria-label="Close contact form">Close</button>
+                    </div>
+                    <form id="contact-form" action="https://formsubmit.co/colechandler0@gmail.com" method="POST">
+                        <input type="hidden" name="_subject" value="New project inquiry — thecolechandler.com">
+                        <input type="hidden" name="_template" value="table">
+                        <input type="hidden" name="_captcha" value="false">
+                        <input type="text" name="_honey" class="contact-honey" tabindex="-1" autocomplete="off" aria-hidden="true">
+                        <label for="contact-name">Name
+                            <input id="contact-name" name="name" autocomplete="name" maxlength="120" required autofocus>
+                        </label>
+                        <label for="contact-email">Email
+                            <input id="contact-email" name="email" type="email" autocomplete="email" maxlength="254" required>
+                        </label>
+                        <label for="contact-message">Message
+                            <textarea id="contact-message" name="message" maxlength="5000" placeholder="What are you working on?" required></textarea>
+                        </label>
+                        <button class="contact-send" type="submit">Send message</button>
+                        <p class="contact-status" id="contact-status" role="status" aria-live="polite"></p>
+                    </form>
+                </dialog>`;
 
             container.innerHTML = html;
+
+            const dialog = document.getElementById('contact-dialog');
+            document.querySelector('[data-open-contact]')?.addEventListener('click', () => dialog.showModal());
+            document.querySelector('[data-close-contact]').addEventListener('click', () => dialog.close());
+            document.getElementById('contact-form').addEventListener('submit', sendInquiry);
+        }
+
+        async function sendInquiry(event) {
+            event.preventDefault();
+            const form = event.currentTarget;
+            const button = form.querySelector('[type="submit"]');
+            const status = document.getElementById('contact-status');
+            if (button.disabled) return;
+            const payload = Object.fromEntries(new FormData(form));
+            if (payload._honey) return;
+            payload._replyto = payload.email;
+            button.disabled = true;
+            button.textContent = 'Sending…';
+            form.setAttribute('aria-busy', 'true');
+            status.textContent = '';
+            const controller = new AbortController();
+            const timeout = setTimeout(() => controller.abort(), 20000);
+            try {
+                const response = await fetch(form.action.replace('formsubmit.co/', 'formsubmit.co/ajax/'), {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+                    body: JSON.stringify(payload),
+                    signal: controller.signal
+                });
+                const result = await response.json();
+                if (!response.ok || ![true, 'true'].includes(result.success) || /activat/i.test(result.message || '')) {
+                    throw new Error('Delivery not confirmed');
+                }
+                form.reset();
+                status.textContent = 'Message sent. Thanks—I’ll be in touch.';
+            } catch (error) {
+                status.textContent = 'Your message couldn’t be sent. Please try again in a moment.';
+            } finally {
+                clearTimeout(timeout);
+                button.disabled = false;
+                button.textContent = 'Send message';
+                form.removeAttribute('aria-busy');
+            }
         }
 
         // Load the profile data
