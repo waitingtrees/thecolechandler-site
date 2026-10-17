@@ -448,7 +448,10 @@
                 if (data.contact && data.contact.length > 0) {
                     html += '<p>';
                     data.contact.forEach((contact, index) => {
-                        html += `<a href="${contact.url}" target="_blank">${contact.platform}</a>`;
+                        const linkAttributes = /^https?:/i.test(contact.url)
+                            ? ' target="_blank" rel="noopener noreferrer"'
+                            : '';
+                        html += `<a href="${contact.url}"${linkAttributes}>${contact.platform}</a>`;
                         if (index < data.contact.length - 1) {
                             html += ', ';
                         }
@@ -470,8 +473,11 @@
             if (data.projects) allProjects.push(...data.projects);
             if (data.sideProjects) allProjects.push(...data.sideProjects);
 
-            // Sort by year (newest first)
+            // Show featured client work first, then sort by year (newest first).
             allProjects.sort((a, b) => {
+                const featuredA = a.featuredOrder ?? Infinity;
+                const featuredB = b.featuredOrder ?? Infinity;
+                if (featuredA !== featuredB) return featuredA - featuredB;
                 const yearA = parseInt(a.year) || 0;
                 const yearB = parseInt(b.year) || 0;
                 return yearB - yearA;

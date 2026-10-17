@@ -6,8 +6,8 @@
     "profession": "Cinematography & Editing",
     "location": "Tulsa, Oklahoma",
     "pronouns": null,
-    "byline": "Cinematography, editing, and on-set technical support for corporate and commercial clients in Tulsa, OK.",
-    "about": "Cinematography, editing, and on-set technical support for corporate and commercial clients in Tulsa, OK and surrounding areas.\nCore Services:\n\nPre-production planning and creative development\nProduction (camera operation, directing, lighting, audio)\nPost-production (editing, color grading, motion graphics, sound design)\n\nSoftware: DaVinci Resolve, Adobe Suite, Blender",
+    "byline": "Photography and filmmaking for corporate and commercial clients.",
+    "about": "Photography and filmmaking for corporate and commercial clients.\n\nBrand photography, business videos, and event coverage—from planning to final delivery.",
     "status": {
       "text": null,
       "emoji": null,
@@ -260,7 +260,7 @@
     {
       "id": "5seolx2J15RaO2F4HMTT",
       "year": "2024",
-      "heading": "Matson's",
+      "heading": "Maston's",
       "url": "https://www.mastonstulsa.com/",
       "collaborators": [],
       "description": "Brand identity stills for website, social, and print",
@@ -339,8 +339,9 @@
         }
       ],
       "type": "project",
-      "title": "Matson's",
-      "company": ""
+      "title": "Maston's",
+      "company": "",
+      "featuredOrder": 0
     },
     {
       "id": "ZJ2PSOJO0WlY3n533n2u",
@@ -601,7 +602,8 @@
       ],
       "type": "project",
       "title": "AirCo",
-      "company": ""
+      "company": "",
+      "featuredOrder": 1
     },
     {
       "id": "G9MM2b0v0ZMZ4f2LCcic",
@@ -1161,7 +1163,7 @@
         {
           "id": "5seolx2J15RaO2F4HMTT",
           "year": "2024",
-          "heading": "Matson's",
+          "heading": "Maston's",
           "url": "https://www.mastonstulsa.com/",
           "collaborators": [],
           "description": "Brand identity stills for website, social, and print",
@@ -1240,8 +1242,9 @@
             }
           ],
           "type": "project",
-          "title": "Matson's",
-          "company": ""
+          "title": "Maston's",
+          "company": "",
+          "featuredOrder": 0
         },
         {
           "id": "ZJ2PSOJO0WlY3n533n2u",
@@ -1502,7 +1505,8 @@
           ],
           "type": "project",
           "title": "AirCo",
-          "company": ""
+          "company": "",
+          "featuredOrder": 1
         },
         {
           "id": "G9MM2b0v0ZMZ4f2LCcic",
